@@ -1,4 +1,4 @@
 # Hying_Va
  WebProgramming_Project
 
- I made a project. dude
+ This project is Sunrin Internet HighSchool student's WebProgramming Project. folks.
