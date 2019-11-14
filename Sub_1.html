@@ -26,13 +26,13 @@
             color: white;
         }
         .search{
-            width: 85%;
+            width: 60%;
             display: flex;
             justify-content: center;
         }
         .search>*{
             position: relative;
-            right: 15%;
+            right: 10%;
         }
         #search{
             width: 250px;
@@ -55,6 +55,42 @@
             height: 200px;
             border: 1px solid black;
         }
+        .upperSel{
+            display: flex;
+            justify-content: center;
+        }
+        .selection{
+            background-color: lightgray;
+            border: 1px solid darkgray;
+            width: 60px;
+            height: 30px;
+            color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lowerSel{
+            display: flex;
+            width: 186px;
+            height: 80px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lightgray;
+        }
+        .select{
+            width: 90px;
+            display: flex;
+            width: 70px;
+            height: 25px;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: darkgray;
+        }
+        .red{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -75,20 +111,29 @@
     <section>
         <div class="intro">
             <div class="text">
-                
+                현재 저희 사이트는,<br>
+                서울 소재 대학교 <span class="red">NaN개</span>,
+                경기도 소재 대학교 <span class="red">NaN개</span>,
+                충청도 ...
             </div>
             <div class="input">
                 <div class="upperSel">
-                    <div class="jeon">전형</div>
-                    <div class="muni">문/이과</div>
-                    <div class="hack">학과</div>
+                    <div class="selection" id="jeon">전형</div>
+                    <div class="selection" id="muni">문/이과</div>
+                    <div class="selection" id="hack">학과</div>
                 </div>
                 <div class="lowerSel">
-                    <!-- 사실 여기는 innerHTML이라 JS 구역 -->
-                    
+                    <!-- ChungYonTa Fighting! -->
+                    <div class="select">자연계</div>
+                    <div class="select">공학계</div>
+                    <div class="select">법학계</div>
+                    <div class="select">문학계</div>
                 </div>
             </div>
         </div>
+    </section>
+    <section>
+        <div>지역 선택</div>
     </section>
 </body>
 </html>
