@@ -3,4 +3,4 @@
 
  This project is Sunrin Internet HighSchool student's WebProgramming Project. folks.
 
- chungYon_ta
+ chungYon_ta == AnimationFan
