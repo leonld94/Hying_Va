@@ -97,6 +97,18 @@
         .red{
             color: red;
         }
+        .localSel{
+            display: block;
+            width: 100%;
+        }
+        .localTitle{
+            display: flex;
+            justify-content: center;
+            border: 1px solid black;
+        }
+        .local{
+            width: 80%;
+        }
     </style>
 </head>
 <body>
@@ -107,11 +119,11 @@
         <div class="search">
             <form>
                 <input type="search" id="search" placeholder="어느 대학교?" required>
-                <input type="submit" id="submit" value="검색">
+                <input type="submit" id="submit" value="검색"">
             </form>
         </div>
         <div class="infor">
-            <a href="./NoLink">도움말</a>
+            <a href="./undefined">도움말</a>
         </div>
     </header>
     <section>
@@ -140,9 +152,12 @@
             </div>
         </div>
     </section>
+    <br>
     <section id="localSel">
-        <div class="local">지역 선택</div>
-        
+        <div class="localTitle">
+            <div class="local">지역 선택</div>
+            <img src="" alt="HelloWorld">
+        </div>
     </section>
 </body>
 </html>
