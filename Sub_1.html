@@ -49,11 +49,17 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+            background-image: url("./Sub_1_1.png");
         }
         .text{
             width: 40%;
             height: 200px;
             border: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+        #muni{
+            border-bottom: 1px solid lightgray;
         }
         .upperSel{
             display: flex;
@@ -111,10 +117,12 @@
     <section>
         <div class="intro">
             <div class="text">
-                현재 저희 사이트는,<br>
-                서울 소재 대학교 <span class="red">NaN개</span>,
-                경기도 소재 대학교 <span class="red">NaN개</span>,
-                충청도 ...
+                <div class="write">
+                    현재 저희 사이트는,<br>
+                    서울 소재 대학교 <span class="red">NaN개</span>,
+                    경기도 소재 대학교 <span class="red">NaN개</span>,
+                    충청도 ...
+                </div>
             </div>
             <div class="input">
                 <div class="upperSel">
@@ -132,8 +140,9 @@
             </div>
         </div>
     </section>
-    <section>
-        <div>지역 선택</div>
+    <section id="localSel">
+        <div class="local">지역 선택</div>
+        
     </section>
 </body>
 </html>
