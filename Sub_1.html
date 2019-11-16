@@ -129,6 +129,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            right: 10px;
         }
         #localCol{
             display: block;
@@ -141,12 +142,58 @@
         }
         .colTitle{
             width: 90%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid black;
+            position: relative;
+            left: 5%;
+            top: 20px;
+        }
+        .colBody{
+            width: 90%;
             display: flex;
             justify-content: space-between;
             border: 1px solid black;
             position: relative;
             left: 5%;
             top: 20px;
+            align-items: center;
+        }
+        #colLocal{
+            border: 1px solid navy;
+            height: 30px;
+            width: 100px;
+            position: relative;
+            left: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .localPhoto{
+            position: relative;
+            right: 10px;
+        }
+        .colleage{
+            width: 100%;
+            margin: 0px;
+            text-align: center;
+        }
+        th, td{
+            border: 1px solid black;
+        }
+        .Place{
+            width: 15%;
+        }
+        .Name{
+            width: 55%;
+        }
+        .SuLink{
+            width: 15%;
+        }
+        .JungLink{
+            width: 15%;
         }
     </style>
 </head>
@@ -202,7 +249,7 @@
                 <img src="" alt="Seoul">
             </div>
             <div class="photo">
-                <img src="" alt="KeonGi">
+                <img src="" alt="KeongGi">
             </div>
             <!-- MaxCount = 6 -->
         </div>
@@ -210,8 +257,35 @@
     <br>
     <section id="localCol">
         <div class="colTitle">
-            <div>(지역 이름)</div>
+            <div id="colLocal">(지역 이름)</div>
             <img src="" alt="Arrow" class="localPhoto">
+        </div>
+        <div class="colBody">
+            <table class="colleage">
+                <!-- JStris -->
+                <thead>
+                    <tr>
+                        <th class="Place">소재</th>
+                        <th class="Name">대학교 이름</th>
+                        <th class="SuLink">수시 링크</th>
+                        <th class="JungLink">정시 링크</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>서울특별시</td>
+                        <td>서울대학교</td>
+                        <td><a href="nolink">수시 링크</a></td>
+                        <td><a href="noLink">정시 링크</a></td>
+                    </tr>
+                    <tr>
+                        <td>대전광역시</td>
+                        <td>KAIST</td>
+                        <td><a href="undeinfed">수시 링크</a></td>
+                        <td><a href="NoLink">정시 링크</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </body>
