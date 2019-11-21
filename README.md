@@ -2,8 +2,7 @@
  WebProgramming_Project
 
  This project is Sunrin Internet HighSchool student's WebProgramming Project. Folks.
-
- chungYon_ta == AnimationFan
+ 
  Made By Luciola + NeFus + SHARC(IWOP)
 
  현재 계획 :  
@@ -11,6 +10,8 @@
         <지방>  
         <특성화고 전형>  
         <자유전공>  
+        // <컴퓨터 공학/과학과>  
+        <여대>  
         -(이하 구상중)  
     2. 대학 목록  
         -정리가 끝나지 않아 생략함  
@@ -29,4 +30,4 @@
 []  
 .  
 .  
-.  
+.
