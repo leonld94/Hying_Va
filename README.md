@@ -3,7 +3,11 @@
 
  This project is Sunrin Internet HighSchool student's WebProgramming Project. Folks.
  
- Made By Luciola + NeFus + SHARC(IWOP)
+ Made By Luciola + NeFus + SHARC
+
+ GeomYeolSeongMaERoMeGaPerLuckKotKotGaASiHyIIngVaHamBurGer  
+ chung_yonTa  
+ AnmiationFan  
 
  현재 계획 :  
     1. 태그 종류  

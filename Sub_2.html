@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        header{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: center;
+            margin: 5px;
+        }
+        .logo{
+            width: 150px;
+            height: 60px;
+            border: 1px solid black;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            color: white;
+        }
+        .empty{
+            width: 60%;
+        }
+        .infor{
+            text-decoration: underline;
+        }
+        a{
+            color: gray;
+            text-decoration: none;
+        }
+        .intro{
+            box-sizing: border-box;
+            width: 100%;
+            height: 250px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("./Sub.png");
+        }
+        .input{
+            width: 300px;
+            height: 80px;
+            background-color: white;
+            border-radius: 40px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+        #search{
+            border: 0px;
+            border-bottom: 1px solid gray;
+        }
+        #localCol{
+            display: block;
+            width: 100%;
+        }
+        .colTitle{
+            width: 70%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            left: 15%;
+            top: 20px;
+        }
+        .colBody{
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            left: 10%;
+            top: 20px;
+            align-items: center;
+        }
+        .colleage{
+            width: 100%;
+            margin: 0px;
+            border-collapse: collapse;
+            line-height: 1.5;
+            margin : 20px 10px;
+            text-align: center;
+        }
+        th, td{
+            border: 1px solid black;
+            font-weight: bold;
+        }
+        .Place{
+            width: 10%;
+        }
+        .Name{
+            width: 35%;
+        }
+        .Tag{
+            width: 35%;
+        }
+        .SuLink{
+            width: 10%;
+        }
+        .JungLink{
+            width: 10%;
+        }
+        .prov, .dorm, .scie{
+            display: inline-block;
+            color: white;
+            padding: 2px 5px;
+            margin: 0px 5px;
+        }
+        .prov{
+            background-color: orange;
+        }
+        .dorm{
+            background-color: lime;
+        }
+        .scie{
+            background-color: blue;
+        }
+        .tag{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="" alt="GUI Logo">
+        </div>
+        <div class="empty"></div>
+        <div class="infor">
+            <a href="./undefined">도움말</a>
+        </div>
+    </header>
+    <section>
+        <div class="intro">
+            <div class="input">
+                <form>
+                    <input type="search" id="search" placeholder="어느 대학교?" required>
+                    <input type="submit" id="submit" value="검색">
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="localCol">
+        <div class="colBody">
+            <table class="colleage">
+                <!-- var Famous = undefined -->
+                <thead>
+                    <tr>
+                        <th class="Place">소재</th>
+                        <th class="Name">대학교 이름</th>
+                        <th class="Tag">태그</th>
+                        <th class="SuLink">수시 링크</th>
+                        <th class="JungLink">정시 링크</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="place">서울특별시</td>
+                        <td>서울대학교</td>
+                        <td>
+                            <div class="tag">
+                                <div class="dorm">기숙사</div>
+                            </div>
+                        </td>
+                        <td><a href="nolink">수시 링크</a></td>
+                        <td><a href="noLink">정시 링크</a></td>
+                    </tr>
+                    <tr>
+                        <td class="place">대전광역시</td>
+                        <td>KAIST</td>
+                        <td>
+                            <div class="tag">
+                                <div class="prov">지방</div>
+                                <div class="dorm">기숙사</div>
+                                <div class="scie">과학기술원</div>
+                            </div>
+                        </td>
+                        <td><a href="undeinfed">수시 링크</a></td>
+                        <td><a href="NoLink">정시 링크</a></td>
+                    </tr>
+                    <tr>
+                        <td class="place">부산광역시</td>
+                        <td>인제대학교</td>
+                        <td>
+                            <div class="tag">
+                                <div class="prov">지방</div>
+                                <div class="dorm">기숙사</div>
+                            </div>
+                        </td>
+                        <td><a href="undeinfed">수시 링크</a></td>
+                        <td><a href="NoLink">정시 링크</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>
