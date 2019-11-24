@@ -13,15 +13,14 @@
             justify-content: center;
         }
         .title{
-            display: inline-flex;
-            justify-content: center;
+            display: flex;
             align-items: flex-end;
+            flex-direction: column;
             border: 1px solid black;
             border-radius: 30px;
             padding: 20px 40px;
             width: 60%;
             height: 400px;
-            bottom: 20px;
         }
         section{
             display: flex;
@@ -35,7 +34,12 @@
             height: 300px;
         }
         ul,li{list-style:none;}
-        .slide{height: 300px; width: 300px;overflow: hidden;}
+        .slide{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid black;
+        }
         .slide ul{height: 100%}
         .slide li{height: 100%}
         .slide li:nth-child(1){background-image: url("Main_Slide/1_UNIST.png");}
@@ -76,8 +80,10 @@
                     <li></li>
                     <li></li>
                 </ul>
-            </div>
+            </div> 
+            
             <h1>Great University Information, GUI!</h1>
+            
         </div>
     </header>
     <section>
