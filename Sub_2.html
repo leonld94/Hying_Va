@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <style>
         body{
             margin: 0px;
@@ -30,12 +29,13 @@
         .empty{
             width: 60%;
         }
-        .infor{
-            text-decoration: underline;
-        }
         a{
-            color: gray;
+            color: red;
             text-decoration: none;
+        }
+        .infor{
+            color: gray;
+            text-decoration: underline;
         }
         .intro{
             box-sizing: border-box;
@@ -93,25 +93,31 @@
             line-height: 1.5;
             margin : 20px 10px;
             text-align: center;
+            background-color: #EEEEEE;
         }
         th, td{
-            border: 1px solid black;
+            border: 1px solid #CCCCCC;
             font-weight: bold;
         }
         .Place{
             width: 10%;
+            background-color: #AAAAAA;
         }
         .Name{
             width: 35%;
+            background-color: #DDDDDD;
         }
         .Tag{
             width: 35%;
+            background-color: #DDDDDD;
         }
         .SuLink{
             width: 10%;
+            background-color: #DDDDDD;
         }
         .JungLink{
             width: 10%;
+            background-color: #DDDDDD;
         }
         .prov, .dorm, .scie{
             display: inline-block;
@@ -120,18 +126,22 @@
             margin: 0px 5px;
         }
         .prov{
-            background-color: orange;
+            background-color: #55FF77;
         }
         .dorm{
-            background-color: lime;
+            background-color: #FF7700;
         }
         .scie{
-            background-color: blue;
+            background-color: #3333BB;
         }
         .tag{
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            padding: 2px 0px;
+        }
+        .place{
+            background-color: #CCCCCC;
         }
     </style>
 </head>
@@ -142,7 +152,7 @@
         </div>
         <div class="empty"></div>
         <div class="infor">
-            <a href="./undefined">도움말</a>
+            <a href="./undefined" class="infor">도움말</a>
         </div>
     </header>
     <section>
@@ -174,36 +184,36 @@
                         <td>서울대학교</td>
                         <td>
                             <div class="tag">
-                                <div class="dorm">기숙사</div>
+                                <span class="dorm">기숙사</span>
                             </div>
                         </td>
-                        <td><a href="nolink">수시 링크</a></td>
-                        <td><a href="noLink">정시 링크</a></td>
+                        <td><a href="nolink">링크</a></td>
+                        <td><a href="noLink">링크</a></td>
                     </tr>
                     <tr>
                         <td class="place">대전광역시</td>
                         <td>KAIST</td>
                         <td>
                             <div class="tag">
-                                <div class="prov">지방</div>
-                                <div class="dorm">기숙사</div>
-                                <div class="scie">과학기술원</div>
+                                <span class="prov">지방</span>
+                                <span class="dorm">기숙사</span>
+                                <span class="scie">과학기술원</span>
                             </div>
                         </td>
-                        <td><a href="undeinfed">수시 링크</a></td>
-                        <td><a href="NoLink">정시 링크</a></td>
+                        <td>-</td>
+                        <td><a href="NoLink">링크</a></td>
                     </tr>
                     <tr>
                         <td class="place">부산광역시</td>
                         <td>인제대학교</td>
                         <td>
                             <div class="tag">
-                                <div class="prov">지방</div>
-                                <div class="dorm">기숙사</div>
+                                <span class="prov">지방</span>
+                                <span class="dorm">기숙사</span>
                             </div>
                         </td>
-                        <td><a href="undeinfed">수시 링크</a></td>
-                        <td><a href="NoLink">정시 링크</a></td>
+                        <td><a href="NoLink">링크</a></td>
+                        <td><a href="NoLink">링크</a></td>
                     </tr>
                 </tbody>
             </table>
