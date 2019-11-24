@@ -26,14 +26,20 @@
             - 사전순  
             - 재학생 수(고려중)  
             - 태그 순  
-            - (이하 추가 요망)
+            - (이하 추가 요망)  
     4. 대학 필요 정보  
         -수시/정시 링크  
         -위치  
         -학과 존재 여부 (컴공과, 컴과과, 전화기/정전기, 수리논리과, 물리학과)  
   
-    5. 알림 써놓기  
-    -태그 : <국내 상위 20위 대학>은 'https://www.languagecourse.net/ko/daehag--south-korea'을 기준으로 정한것  
+    5. Footer  
+    -알림사항
+        태그 : <국내 상위 20위 대학>은 'https://www.languagecourse.net/ko/daehag--south-korea'을 기준으로 정한것  
+        대학 선별 기준 :   
+    -대표자명 : 이윤호  
+    -주소 : Colin P Kelly Junior Street, San Francisco  
+    -전화번호 : 010-4677-3492  
+    -이메일 : qwerty1076199@gmail.com  
   
 <공통 할일>  
 1. 대학 선별 기준 선정    1) 이과만 취급(의료계+자연계+공과)  
