@@ -8,15 +8,15 @@
             font-size: 1.7em;
         }
         header{
-            text-align: center;
             display: flex;
             justify-content: center;
+            text-align: center;
         }
         .title{
             display: flex;
             align-items: flex-end;
             flex-direction: column;
-            border: 1px solid black;
+            overflow: hidden;
             border-radius: 30px;
             padding: 20px 40px;
             width: 60%;
@@ -33,15 +33,23 @@
             text-align: center;
             height: 300px;
         }
+        ul{
+            margin: 0px;
+            padding: 0px;
+        }
         ul,li{list-style:none;}
+        #textTitle{
+            margin: 0px;
+            transform: translateY(-100%);
+        }
         .slide{
             height: 100%;
             width: 100%;
+            border-radius: 30px;
             overflow: hidden;
-            border: 1px solid black;
         }
         .slide ul{height: 100%}
-        .slide li{height: 100%}
+        .slide li{height: 100%; width: auto;}
         .slide li:nth-child(1){background-image: url("Main_Slide/1_UNIST.png");}
         .slide li:nth-child(2){background-image: url("Main_Slide/2_KAIST.png");}
         .slide li:nth-child(3){background-image: url("Main_Slide/3_서울대.png");}
@@ -80,10 +88,8 @@
                     <li></li>
                     <li></li>
                 </ul>
+                <h1 id="textTitle">Great University Information, GUI!</h1>
             </div> 
-            
-            <h1>Great University Information, GUI!</h1>
-            
         </div>
     </header>
     <section>
