@@ -10,18 +10,18 @@
             font-family: 'Nanum Gothic', sans-serif;
         }
         header{
-            text-align: center;
             display: flex;
             justify-content: center;
+            text-align: center;
         }
         .title{
             display: flex;
-            justify-content: center;
             align-items: flex-end;
-            border: 1px solid black;
+            flex-direction: column;
+            overflow: hidden;
             border-radius: 30px;
             padding: 20px 40px;
-            width: 60%;
+            width: 600px;
             height: 400px;
         }
         section{
@@ -35,11 +35,64 @@
             text-align: center;
             height: 300px;
         }
+        ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul,li{list-style:none;}
+        #textTitle{
+            margin: 0px;
+            transform: translateY(-100%);
+        }
+        .slide{
+            height: 100%;
+            width: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .slide ul{height: 100%}
+        .slide li{height: 100%; width: auto;}
+        .slide li:nth-child(1){background-image: url("Main_Slide/1_UNIST.png");}
+        .slide li:nth-child(2){background-image: url("Main_Slide/2_KAIST.png");}
+        .slide li:nth-child(3){background-image: url("Main_Slide/3_서울대.png");}
+        .slide li:nth-child(4){background-image: url("Main_Slide/4_GIST.png");}
+        .slide li:nth-child(5){background-image: url("Main_Slide/5_DGIST.png");}
     </style>
+    <script>
+        const all = ele => document.querySelectorAll(ele);
+        const one = ele => document.querySelector(ele);
+        const slide = _ => {
+            const wrap = one('.slide')
+            const target = wrap.children[0]
+            const len = target.children.length
+
+            target.style.cssText = `width:calc(100% * ${len});display:flex;transition:2s`
+            Array.from(target.children).forEach(ele => ele.style.cssText = 
+            `width:calc(100% / ${len});`)
+            let pos = 0
+            setInterval(() => {
+                pos = (pos + 1) % len
+                target.style.marginLeft = `${-pos * 100}%`
+            }, 3000)
+        }
+        
+        window.onload = function(){slide()}
+    </script>
 </head>
 <body>
     <header>
-        <h1 class="title">Great University Information, GUI!</h1>
+        <div class="title">
+            <div class="slide">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <h1 id="textTitle">Great University Information, GUI!</h1>
+            </div> 
+        </div>
     </header>
     <section>
         <div></div>
