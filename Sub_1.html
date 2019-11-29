@@ -109,11 +109,11 @@
         }
         .localTitle, .localBody, .colTitle, .colBody{
             box-shadow:
-                1px 0 0 0 black,
-                0 1px 0 0 black,
-                1px 1px 0 0 black,
-                1px 0 0 0 black inset,
-                0 1px 0 0 black inset;
+                -1px 0 0 0 black,
+                0 -1px 0 0 black,
+                -1px -1px 0 0 black,
+                -1px 0 0 0 black inset,
+                0 -1px 0 0 black inset;
         }
         .localTitle{
             width: 70%;
@@ -157,6 +157,8 @@
         #localCol{
             display: block;
             width: 100%;
+            position: relative;
+            top: 20px;
         }
         .colTitle{
             width: 70%;
@@ -166,7 +168,6 @@
             align-items: center;
             position: relative;
             left: 15%;
-            top: 20px;
         }
         .colBody{
             width: 70%;
@@ -174,8 +175,10 @@
             justify-content: space-between;
             position: relative;
             left: 15%;
-            top: 20px;
             align-items: center;
+        }
+        .bodyBox{
+            overflow: hidden;
         }
         #colLocal{
             border: 1px solid navy;
@@ -287,14 +290,16 @@
             <div id="selLocal">(지역 선택)</div>
             <img src="triangleDesign/triangle2.png" alt="Arrow" class="localPhoto" id="selArrow" onclick="hidDiv(this)">
         </div>
-        <div class="localBody" name="localDiv">
-            <div class="photo">
-                <img src="" alt="Seoul">
+        <div class="bodyBox">
+            <div class="localBody" name="localDiv">
+                <div class="photo">
+                    <img src="" alt="Seoul">
+                </div>
+                <div class="photo">
+                    <img src="" alt="KeongGi">
+                </div>
+                <!-- MaxCount = 6 -->
             </div>
-            <div class="photo">
-                <img src="" alt="KeongGi">
-            </div>
-            <!-- MaxCount = 6 -->
         </div>
     </section>
     <br>
@@ -303,32 +308,34 @@
             <div id="colLocal">(지역 이름)</div>
             <img src="triangleDesign/triangle2.png" alt="Arrow" class="localPhoto" id="colArrow" onclick="hidDiv(this)">
         </div>
-        <div class="colBody" name="localDiv">
-            <table class="college">
-                <!-- JStris -->
-                <thead>
-                    <tr>
-                        <th class="Place">소재</th>
-                        <th class="Name">대학교 이름</th>
-                        <th class="SuLink">수시 링크</th>
-                        <th class="JungLink">정시 링크</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="place">서울특별시</td>
-                        <td>서울대학교</td>
-                        <td><a href="nolink">수시 링크</a></td>
-                        <td><a href="noLink">정시 링크</a></td>
-                    </tr>
-                    <tr>
-                        <td class="place">대전광역시</td>
-                        <td>KAIST</td>
-                        <td><a href="undeinfed">수시 링크</a></td>
-                        <td><a href="NoLink">정시 링크</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="bodyBox">
+            <div class="colBody" name="localDiv">
+                <table class="college">
+                    <!-- JStris -->
+                    <thead>
+                        <tr>
+                            <th class="Place">소재</th>
+                            <th class="Name">대학교 이름</th>
+                            <th class="SuLink">수시 링크</th>
+                            <th class="JungLink">정시 링크</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="place">서울특별시</td>
+                            <td>서울대학교</td>
+                            <td><a href="nolink">수시 링크</a></td>
+                            <td><a href="noLink">정시 링크</a></td>
+                        </tr>
+                        <tr>
+                            <td class="place">대전광역시</td>
+                            <td>KAIST</td>
+                            <td><a href="undeinfed">수시 링크</a></td>
+                            <td><a href="NoLink">정시 링크</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 </body>
