@@ -100,7 +100,7 @@
             border: 1px solid #CCCCCC;
             font-weight: bold;
         }
-        .Place{
+        .Location{
             width: 10%;
             background-color: #AAAAAA;
         }
@@ -162,11 +162,113 @@
         td{
             font-weight: normal;
         }
-        .place{
+        .loc{
             background-color: #CCCCCC;
             font-weight: bold;
         }
     </style>
+    <script>
+        var exCollege = new Array(50);
+
+
+        var seoulCollege = new Array(50);   // 서울
+        var ggCollege = new Array(50);      // 경기도
+        var gsCollege = new Array(50);      // 경상도
+        var jlCollege = new Array(50);      // 전라도
+        var gwCollege = new Array(50);      // 강원도
+        var ccCollege = new Array(50);      // 충청도
+        var metroCollege = new Array(50);   // 광역시
+        var allCollege = new Array(400);    // 전체 대학 총괄
+        
+        var allCounter = 0;
+
+
+        var exrequest;
+        var exListURL="https://leonld94.github.io/University_File/Example_Universities.json"
+
+        var Seoulrequest;
+        var Metrorequest;
+        var seoulListURL="https://leonld94.github.io/University_File/Seoul_Universities.json";
+        var metroListURL="https://leonld94.github.io/University_File/Metro_Universities.json";
+
+
+        function exFill(json){
+            var i,end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                exCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+
+
+        function fillTable(){
+            var iter, end;
+            var jter, fnd;
+
+            end=allCounter;
+            var tbody=document.getElementsByTagName("tbody")[0];
+            for(iter=0;iter<end;iter++){
+                var newchild=document.createElement("tr");
+
+                var loc=document.createElement("td");
+                loc.setAttribute("class","loc");
+                loc.innerHTML=allCollege[iter].location;
+                newchild.appendChild(loc);
+
+                var name=document.createElement("td");
+                name.innerHTML=allCollege[iter].college_name;
+                newchild.appendChild(name);
+
+                var tag=document.createElement("td");
+                var div=document.createElement("div");
+                div.setAttribute("class","tag");
+                fnd=allCollege[iter].Tag.length;
+                for(jter=0;jter<fnd;jter++){
+                    var spans=document.createElement("span");
+                    if(allCollege[iter].Tag[jter] == "지방") spans.setAttribute("class","Prov Tags");
+                    else if(allCollege[iter].Tag[jter] == "특성화고 전형") spans.setAttribute("class","Spec Tags");
+                    else if(allCollege[iter].Tag[jter] == "자유전공") spans.setAttribute("class","Free Tags");
+                    else if(allCollege[iter].Tag[jter] == "여대") spans.setAttribute("class","Girl Tags");
+                    else if(allCollege[iter].Tag[jter] == "기숙사") spans.setAttribute("class","Dorm Tags");
+                    else if(allCollege[iter].Tag[jter] == "TOP 20") spans.setAttribute("class","TopT Tags");
+                    else if(allCollege[iter].Tag[jter] == "컴퓨터 공학과") spans.setAttribute("class","Comp Tags");
+                    else if(allCollege[iter].Tag[jter] == "거점대학교") spans.setAttribute("class","SHld Tags");
+                    else if(allCollege[iter].Tag[jter] == "과학기술원") spans.setAttribute("class","Scie Tags");
+                    spans.innerHTML=allCollege[iter].Tag[jter];
+                    div.appendChild(spans);
+                }
+                tag.appendChild(div);
+                newchild.appendChild(tag);
+
+                var early=document.createElement("td");
+                if(allCollege[iter].early_link == "")
+                    early.innerHTML="-";
+                else
+                    early.innerHTML="<a href='"+allCollege[iter].early_link+"'>링크</a>";
+                newchild.appendChild(early);
+
+                var regular=document.createElement("td");
+                if(allCollege[iter].regular_link == "")
+                    regular.innerHTML="-";
+                else
+                    regular.innerHTML="<a href='"+allCollege[iter].regular_link+"'>링크</a>";
+                newchild.appendChild(regular);
+
+                tbody.appendChild(newchild);
+            }
+        }
+
+
+        exrequest=new XMLHttpRequest();
+        exrequest.open('Get',exListURL);
+        exrequest.responseType='json';
+        exrequest.send();
+        exrequest.onload = function (){
+            exFill(exrequest.response);
+            fillTable();    // 맨 마지막 수신에서 호출해야함
+        }
+        </script>
 </head>
 <body>
     <header>
@@ -194,7 +296,7 @@
                 <!-- var Famous = undefined -->
                 <thead>
                     <tr>
-                        <th class="Place">소재</th>
+                        <th class="Location">소재</th>
                         <th class="Name">대학교 이름</th>
                         <th class="Tag">태그</th>
                         <th class="SuLink">수시 링크</th>
@@ -203,7 +305,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="place">서울특별시</td>
+                        <td class="loc">서울특별시</td>
                         <td>서울대학교</td>
                         <td>
                             <div class="tag">
@@ -214,7 +316,7 @@
                         <td><a href="noLink">링크</a></td>
                     </tr>
                     <tr>
-                        <td class="place">대전광역시</td>
+                        <td class="loc">대전광역시</td>
                         <td>KAIST</td>
                         <td>
                             <div class="tag">
@@ -227,7 +329,7 @@
                         <td>-</td>
                     </tr>
                     <tr>
-                        <td class="place">부산광역시</td>
+                        <td class="loc">부산광역시</td>
                         <td>인제대학교</td>
                         <td>
                             <div class="tag">
