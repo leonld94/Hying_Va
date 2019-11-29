@@ -6,9 +6,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <style>
         body{
+            margin: 0px;
             font-size: 1.7em;
             font-family: 'Nanum Gothic', sans-serif;
-            background-image: url('Sub.png');
+            /*background-image: url('Sub.png');*/
         }
         header{
             display: flex;
@@ -64,6 +65,36 @@
         .slide li:nth-child(3){background-image: url("Main_Slide/3_서울대.png");}
         .slide li:nth-child(4){background-image: url("Main_Slide/4_GIST.png");}
         .slide li:nth-child(5){background-image: url("Main_Slide/5_DGIST.png");}
+        .horizontal{
+            margin-top: 20px;
+            border: 0.5px solid black;
+            width: 100%;
+            height: 0px;
+        }
+        .vertical{
+            border: 0.5px solid black;
+            width: 0px;
+            height: 100%;
+        }
+        .information{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .infor{
+            font-size: 16px;
+            width: 50%;
+            text-align: center;
+        }
+        footer{
+            font-size: 12px;
+            background-color: #555555;
+            color: #FFFFFF;
+            display: block;
+            margin: 0px;
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
     <script>
         const all = ele => document.querySelectorAll(ele);
@@ -111,8 +142,27 @@
             (웃음)내용(웃음)
         </div>
     </section>
+    <div class="horizontal"></div>
     <section>
-        
-    </section> 
+        <div class="information">
+            <div class="infor">
+                asdffsaffadfadfasdfasddfadsfafsdfasd<br>
+                helloworldhelloworldhelloworldhelloworldhelloworld
+            </div>
+            <div class="vertical"></div>
+            <div class="infor">
+                dsafjkhfsgdfghjadfbhfgasbhhdfbhasdbgahdfbga<br>
+                chungyontachungyontachungyontachungyontachungyonta
+            </div>
+        </div>
+    </section>
+    <footer>
+        - 대표자명 : 이윤호<br>
+        - 주소 : undefined<br>
+        - 전화번호 : 010-4677-3492<br>
+        - 이메일 : qwerty1076199@gmail.com<br>
+        태그 중 [TOP 20]는 'https://www.languagecourse.net/ko/daehag--south-korea'를 기준으로 선정하였습니다.<br>
+        재학생 수는 동일 시기가 아닐 수 있습니다.
+    </footer>
 </body>
 </html>
