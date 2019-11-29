@@ -230,13 +230,14 @@
 <script>
     let count = [0,0];
     let i;
-    const div = document
     const hidDiv = th => {
-        (th.id == 'selArrow') ? i = 1 : i = 0;
+        const div = document.getElementsByName('localDiv')
+        i = (th.id == 'selArrow') ? 0 : 1;
         count[i]++
         th.style.cssText = `display: flex; transition: 0.5s; transform: rotate(${count[i] * 180}deg);`
-        console.log(div[i])
-        div[i].style.marginLeft = `${i * 100}%`
+        console.log(div)
+        div[i].style.cssText = 'display: flex; transition: 1s;'
+        div[i].style.marginTop = `${(-count[i] % 2) * 100}%`
     }
 </script>
 <body>
@@ -286,7 +287,7 @@
             <div id="selLocal">(지역 선택)</div>
             <img src="triangleDesign/triangle2.png" alt="Arrow" class="localPhoto" id="selArrow" onclick="hidDiv(this)">
         </div>
-        <div class="localBody">
+        <div class="localBody" name="localDiv">
             <div class="photo">
                 <img src="" alt="Seoul">
             </div>
@@ -302,7 +303,7 @@
             <div id="colLocal">(지역 이름)</div>
             <img src="triangleDesign/triangle2.png" alt="Arrow" class="localPhoto" id="colArrow" onclick="hidDiv(this)">
         </div>
-        <div class="colBody">
+        <div class="colBody" name="localDiv">
             <table class="college">
                 <!-- JStris -->
                 <thead>
