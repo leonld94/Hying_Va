@@ -462,9 +462,6 @@
                     Heap[iter]=allCollege[iter];
                     now=dvs=iter;
                     dvs=parseInt(dvs/2);
-
-                    console.log(Heap[iter].college_name);
-
                     while(dvs!=0){
                         if (Heap[now].college_name < Heap[dvs].college_name) {    // 아직 안정해져서 non으로 둠. 나중에 때에 맞춰 바꿔야함
                             tmp=Heap[now];
