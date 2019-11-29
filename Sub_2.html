@@ -200,6 +200,14 @@
 
         var Heap = new Array(140);          // 정렬용 배열
 
+        var nameSort = false;
+        var studSort = false;
+        var tagsSort = false;
+        var nameUpDown;
+        var studUpDown;
+        var tagsUpDown;
+
+
         var allCounter = 0;
 
 
@@ -234,99 +242,99 @@
             var i,end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                exCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                exCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function seoulFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                seoulCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                seoulCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function metroFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                metroCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                metroCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function ggFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                ggCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                ggCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function gwFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                gwCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                gwCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function gs_bFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                gs_bCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                gs_bCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function gs_nFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                gs_nCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                gs_nCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function jl_bFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                jl_bCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                jl_bCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function jl_nFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                jl_nCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                jl_nCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function cc_bFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                cc_bCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                cc_bCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
         function cc_nFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                cc_nCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
+                cc_nCollege[i]=json.universities[i-1];
+                allCollege[allCounter]=json.universities[i-1];
+                Heap[allCounter]=json.universities[i-1];
             }
         }
 
@@ -337,7 +345,7 @@
 
             end=allCounter;
             
-            for(iter=1;iter<=end;iter++){
+            for(iter=0;iter<end;iter++){
                 var newchild=document.createElement("tr");
 
                 var loc=document.createElement("td");
@@ -457,7 +465,7 @@
             // 여기까지 위치 잡기
 
             wall=end;
-            for(iter=1;iter<=end;iter++){
+            for(iter=1;iter<=end;iter++, wall--){
                 now=1;
                 tmp = Heap[wall];
                 Heap[wall]=Heap[now];
@@ -478,7 +486,6 @@
 				        now = left;
 			        }
 			        else if (Heap[left].non > Heap[right].non && Heap[right].non < Heap[now].non) {         //non
-				        SWAP(Heap[right], Heap[now], tmp);
                         tmp=Heap[right];
                         Heap[right]=Heap[now];
                         Heap[now]=tmp;
@@ -486,27 +493,57 @@
 			        }
 			        else break;
 		        }
-		        wall--;
             }
             fillTable();
         }
 
 
         function sortName(){             // 이름은 앞에 올수록 작은 값이니까, 한번씩 뒤집어줘야함
-            getHeap("college_name");
-            // 정렬
-            // tbody 자식 없애기
-            // fillTable()로 다시 채우기
+            //if(nameSort == true)    // 뒤집으면 됨
+            {   
 
-            // or
-            // fillTable()로 채우기
-            // allCounter 수만큼 앞에서부터 자식 삭제하기
+            }
+            //else 
+            {                       // 정렬하면 됨
+                studSort=false;
+                tagsSort=false;
+                nameUpDown="UP";
+                // 정렬
+
+                // fillTable()로 채우기
+                fillTable();
+                // allCounter 수만큼 앞에서부터 자식 삭제하기
+                // a.removeChild(a.firstElementChild)를 allCounter 개수만큼 돌면 됨
+
+            }
         }
         function sortStud(){
-            getHeap("students");
+            //if(studSort == true) // 뒤집기
+            {
+
+            }
+            //else 
+            {                    // 정렬
+                nameSort=false;
+                tagsSort=false;
+                studUpDown="UP";
+
+
+            }
         }
         function sortTags(){
-            getHeap("tags.length");
+            //if(studSort == ture) // 뒤집기
+            {   
+
+            }
+            //else 
+            {                    // 정렬
+                nameSort=false;
+                studSort=false;
+                tagsUpDown="UP";
+
+
+            }
         }
         </script>
 </head>
