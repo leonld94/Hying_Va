@@ -171,14 +171,17 @@
         var exCollege = new Array(50);
 
 
-        var seoulCollege = new Array(50);   // 서울
-        var ggCollege = new Array(50);      // 경기도
-        var gsCollege = new Array(50);      // 경상도
-        var jlCollege = new Array(50);      // 전라도
+        var seoulCollege = new Array(32);   // 서울
+        var metroCollege = new Array(24);   // 광역시
+        var ggCollege = new Array(15);      // 경기도
         var gwCollege = new Array(50);      // 강원도
-        var ccCollege = new Array(50);      // 충청도
-        var metroCollege = new Array(50);   // 광역시
-        var allCollege = new Array(400);    // 전체 대학 총괄
+        var gs_bCollege = new Array(50);    // 경상북도
+        var gs_nCollege = new Array(50);    // 경상남도
+        var jl_bCollege = new Array(50);    // 전라북도
+        var jl_nCollege = new Array(50);    // 전라남도
+        var cc_bCollege = new Array(50);    // 충청북도
+        var cc_nCollege = new Array(50);    // 충청남도
+        var allCollege = new Array(140);    // 전체 대학 총괄
         
         var allCounter = 0;
 
@@ -188,15 +191,112 @@
 
         var Seoulrequest;
         var Metrorequest;
+        var ggrequest;
+        var gwrequest;
+        var gs_brequest;
+        var gs_nrequest;
+        var jl_brequest;
+        var jl_nrequest;
+        var cc_brequest;
+        var cc_nrequest;
+
         var seoulListURL="https://leonld94.github.io/University_File/Seoul_Universities.json";
         var metroListURL="https://leonld94.github.io/University_File/Metro_Universities.json";
-
+        var ggListURL;
+        var gwListURL;
+        var gs_bListURL;
+        var gs_nListURL;
+        var jl_bListURL;
+        var jl_nListURL;
+        var cc_bListURL;
+        var cc_nListURL;
+        
 
         function exFill(json){
             var i,end;
             end=json.universities.length;
             for(i=0;i<end;i++,allCounter++){
                 exCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function seoulFill(json){/////
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function metroFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function ggFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function gwFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function gs_bFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function gs_nFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function jl_bFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function jl_nFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function cc_bFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
+                allCollege[allCounter]=json.universities[i];
+            }
+        }
+        function cc_nFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++){
+                /////
                 allCollege[allCounter]=json.universities[i];
             }
         }
