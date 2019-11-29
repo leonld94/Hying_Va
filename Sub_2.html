@@ -121,7 +121,7 @@
             width: 15%;
             background-color: #DDDDDD;
         }
-        .Num{
+        .Students{
             width: 10%;
             background-color: #DDDDDD;
         }
@@ -203,30 +203,31 @@
         var allCounter = 0;
 
 
-        var exrequest;
+        var exRequest;
         var exListURL="https://leonld94.github.io/University_File/Example_Universities.json"
 
-        var Seoulrequest;
-        var Metrorequest;
-        var ggrequest;
-        var gwrequest;
-        var gs_brequest;
-        var gs_nrequest;
-        var jl_brequest;
-        var jl_nrequest;
-        var cc_brequest;
-        var cc_nrequest;
+        var seoulRequest;
+        var metroRequest;
+        var ggRequest;
+        var gwRequest;
+        var gs_bRequest;
+        var gs_nRequest;
+        var jl_bRequest;
+        var jl_nRequest;
+        var cc_bRequest;
+        var cc_nRequest;
 
-        var seoulListURL="https://leonld94.github.io/University_File/Seoul_Universities.json";
-        var metroListURL="https://leonld94.github.io/University_File/Metro_Universities.json";
-        var ggListURL;
-        var gwListURL;
-        var gs_bListURL;
-        var gs_nListURL;
-        var jl_bListURL;
-        var jl_nListURL;
-        var cc_bListURL;
-        var cc_nListURL;
+        var seoulListURL="https://leonld94.github.io/University_File/Seoul_Universities.json";      // 미완
+        var metroListURL="https://leonld94.github.io/University_File/Metro_Universities.json";      //
+        var ggListURL="https://leonld94.github.io/University_File/GG_Universities.json";            //
+        var gwListURL="https://leonld94.github.io/University_File/GW_Universities.json";            //
+        var gs_bListURL="https://leonld94.github.io/University_File/GS_B_Universities.json";        //
+        var gs_nListURL="https://leonld94.github.io/University_File/GS_N_Universities.json";        //
+        var jl_bListURL="https://leonld94.github.io/University_File/JL_B_Universities.json";        //
+        var jl_nListURL="https://leonld94.github.io/University_File/JL_N_Universities.json";        //
+        var cc_bListURL="https://leonld94.github.io/University_File/CC_B_Universities.json";        //
+        var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        //
+        
         
 
         function exFill(json){
@@ -237,11 +238,11 @@
                 allCollege[allCounter]=json.universities[i];
             }
         }
-        function seoulFill(json){/////
+        function seoulFill(json){
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                seoulCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -249,7 +250,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                metroCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -257,7 +258,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                ggCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -265,7 +266,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                gwCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -273,7 +274,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                gs_bCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -281,7 +282,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                gs_nCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -289,7 +290,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                jl_bCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -297,7 +298,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                jl_nCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -305,7 +306,7 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                cc_bCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
@@ -313,18 +314,18 @@
             var i, end;
             end=json.universities.length;
             for(i=0;i<end;i++){
-                /////
+                cc_nCollege[i]=json.universities[i];
                 allCollege[allCounter]=json.universities[i];
             }
         }
 
-
         function fillTable(){
+            var tbody=document.getElementsByTagName("tbody")[0];
             var iter, end;
             var jter, fnd;
 
             end=allCounter;
-            var tbody=document.getElementsByTagName("tbody")[0];
+            
             for(iter=0;iter<end;iter++){
                 var newchild=document.createElement("tr");
 
@@ -337,22 +338,26 @@
                 name.innerHTML=allCollege[iter].college_name;
                 newchild.appendChild(name);
 
+                var stu=document.createElement("td");
+                stu.innerHTML=allCollege[iter].students+"명";
+                newchild.appendChild(stu);
+
                 var tag=document.createElement("td");
                 var div=document.createElement("div");
                 div.setAttribute("class","tag");
-                fnd=allCollege[iter].Tag.length;
+                fnd=allCollege[iter].tags.length;
                 for(jter=0;jter<fnd;jter++){
                     var spans=document.createElement("span");
-                    if(allCollege[iter].Tag[jter] == "지방") spans.setAttribute("class","Prov Tags");
-                    else if(allCollege[iter].Tag[jter] == "특성화고 전형") spans.setAttribute("class","Spec Tags");
-                    else if(allCollege[iter].Tag[jter] == "자유전공") spans.setAttribute("class","Free Tags");
-                    else if(allCollege[iter].Tag[jter] == "여대") spans.setAttribute("class","Girl Tags");
-                    else if(allCollege[iter].Tag[jter] == "기숙사") spans.setAttribute("class","Dorm Tags");
-                    else if(allCollege[iter].Tag[jter] == "TOP 20") spans.setAttribute("class","TopT Tags");
-                    else if(allCollege[iter].Tag[jter] == "컴퓨터 공학과") spans.setAttribute("class","Comp Tags");
-                    else if(allCollege[iter].Tag[jter] == "거점대학교") spans.setAttribute("class","SHld Tags");
-                    else if(allCollege[iter].Tag[jter] == "과학기술원") spans.setAttribute("class","Scie Tags");
-                    spans.innerHTML=allCollege[iter].Tag[jter];
+                    if(allCollege[iter].tags[jter] == "지방") spans.setAttribute("class","Prov Tags");
+                    else if(allCollege[iter].tags[jter] == "특성화고 전형") spans.setAttribute("class","Spec Tags");
+                    else if(allCollege[iter].tags[jter] == "자유전공") spans.setAttribute("class","Free Tags");
+                    else if(allCollege[iter].tags[jter] == "여대") spans.setAttribute("class","Girl Tags");
+                    else if(allCollege[iter].tags[jter] == "기숙사") spans.setAttribute("class","Dorm Tags");
+                    else if(allCollege[iter].tags[jter] == "TOP 20") spans.setAttribute("class","TopT Tags");
+                    else if(allCollege[iter].tags[jter] == "컴퓨터 공학과") spans.setAttribute("class","Comp Tags");
+                    else if(allCollege[iter].tags[jter] == "거점대학교") spans.setAttribute("class","SHld Tags");
+                    else if(allCollege[iter].tags[jter] == "과학기술원") spans.setAttribute("class","Scie Tags");
+                    spans.innerHTML=allCollege[iter].tags[jter];
                     div.appendChild(spans);
                 }
                 tag.appendChild(div);
@@ -376,15 +381,28 @@
             }
         }
 
-
-        exrequest=new XMLHttpRequest();
-        exrequest.open('Get',exListURL);
-        exrequest.responseType='json';
-        exrequest.send();
-        exrequest.onload = function (){
-            exFill(exrequest.response);
+        exRequest=new XMLHttpRequest();
+        exRequest.open('Get',exListURL);
+        exRequest.responseType='json';
+        exRequest.send();
+        exRequest.onload = function (){
+            exFill(exRequest.response);
             fillTable();    // 맨 마지막 수신에서 호출해야함
         }
+
+
+        /// 파일 완성되면 하나씩 될 것
+        // seoulRequest=new XMLHttpRequest();
+        // metroRequest=new XMLHttpRequest();
+        // ggRequest=new XMLHttpRequest();
+        // gwRequest=new XMLHttpRequest();
+        // gs_bRequest=new XMLHttpRequest();
+        // gs_nRequest=new XMLHttpRequest();
+        // jl_bRequest=new XMLHttpRequest();
+        // jl_nRequest=new XMLHttpRequest();
+        // cc_bRequest=new XMLHttpRequest();
+        // cc_nRequest=new XMLHttpRequest();
+
         </script>
 </head>
 <body>
@@ -415,7 +433,7 @@
                     <tr>
                         <th class="Location">소재</th>
                         <th class="Name">대학교 이름</th>
-                        <th class="Num">재학생 수</th>
+                        <th class="Students">재학생 수</th>
                         <th class="Tag">태그</th>
                         <th class="SuLink">수시 링크</th>
                         <th class="JungLink">정시 링크</th>
