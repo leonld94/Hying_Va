@@ -367,14 +367,14 @@
                 if(allCollege[iter].early_link == "")
                     early.innerHTML="-";
                 else
-                    early.innerHTML="<a href='"+allCollege[iter].early_link+"'>링크</a>";
+                    early.innerHTML="<a href='"+allCollege[iter].early_link+"' target='_blank'>링크</a>";
                 newchild.appendChild(early);
 
                 var regular=document.createElement("td");
                 if(allCollege[iter].regular_link == "")
                     regular.innerHTML="-";
                 else
-                    regular.innerHTML="<a href='"+allCollege[iter].regular_link+"'>링크</a>";
+                    regular.innerHTML="<a href='"+allCollege[iter].regular_link+"' target='_blank'>링크</a>";
                 newchild.appendChild(regular);
 
                 tbody.appendChild(newchild);
