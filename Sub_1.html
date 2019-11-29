@@ -240,7 +240,7 @@
         th.style.cssText = `display: flex; transition: 0.5s; transform: rotate(${count[i] * 180}deg);`
         console.log(div)
         div[i].style.cssText = 'display: flex; transition: 1s;'
-        div[i].style.marginTop = `${(-count[i] % 2) * 100}%`
+        div[i].style.marginTop = `${(-count[i] % 2) * 100 / 2}%`
     }
 </script>
 <body>
