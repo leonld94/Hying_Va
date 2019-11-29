@@ -121,7 +121,7 @@
             width: 15%;
             background-color: #DDDDDD;
         }
-        .Num{
+        .Students{
             width: 10%;
             background-color: #DDDDDD;
         }
@@ -337,22 +337,26 @@
                 name.innerHTML=allCollege[iter].college_name;
                 newchild.appendChild(name);
 
+                var stu=document.createElement("td");
+                stu.innerHTML=allCollege[iter].students;
+                newchild.appendChild(stu);
+
                 var tag=document.createElement("td");
                 var div=document.createElement("div");
                 div.setAttribute("class","tag");
-                fnd=allCollege[iter].Tag.length;
+                fnd=allCollege[iter].tags.length;
                 for(jter=0;jter<fnd;jter++){
                     var spans=document.createElement("span");
-                    if(allCollege[iter].Tag[jter] == "지방") spans.setAttribute("class","Prov Tags");
-                    else if(allCollege[iter].Tag[jter] == "특성화고 전형") spans.setAttribute("class","Spec Tags");
-                    else if(allCollege[iter].Tag[jter] == "자유전공") spans.setAttribute("class","Free Tags");
-                    else if(allCollege[iter].Tag[jter] == "여대") spans.setAttribute("class","Girl Tags");
-                    else if(allCollege[iter].Tag[jter] == "기숙사") spans.setAttribute("class","Dorm Tags");
-                    else if(allCollege[iter].Tag[jter] == "TOP 20") spans.setAttribute("class","TopT Tags");
-                    else if(allCollege[iter].Tag[jter] == "컴퓨터 공학과") spans.setAttribute("class","Comp Tags");
-                    else if(allCollege[iter].Tag[jter] == "거점대학교") spans.setAttribute("class","SHld Tags");
-                    else if(allCollege[iter].Tag[jter] == "과학기술원") spans.setAttribute("class","Scie Tags");
-                    spans.innerHTML=allCollege[iter].Tag[jter];
+                    if(allCollege[iter].tags[jter] == "지방") spans.setAttribute("class","Prov Tags");
+                    else if(allCollege[iter].tags[jter] == "특성화고 전형") spans.setAttribute("class","Spec Tags");
+                    else if(allCollege[iter].tags[jter] == "자유전공") spans.setAttribute("class","Free Tags");
+                    else if(allCollege[iter].tags[jter] == "여대") spans.setAttribute("class","Girl Tags");
+                    else if(allCollege[iter].tags[jter] == "기숙사") spans.setAttribute("class","Dorm Tags");
+                    else if(allCollege[iter].tags[jter] == "TOP 20") spans.setAttribute("class","TopT Tags");
+                    else if(allCollege[iter].tags[jter] == "컴퓨터 공학과") spans.setAttribute("class","Comp Tags");
+                    else if(allCollege[iter].tags[jter] == "거점대학교") spans.setAttribute("class","SHld Tags");
+                    else if(allCollege[iter].tags[jter] == "과학기술원") spans.setAttribute("class","Scie Tags");
+                    spans.innerHTML=allCollege[iter].tags[jter];
                     div.appendChild(spans);
                 }
                 tag.appendChild(div);
@@ -415,7 +419,7 @@
                     <tr>
                         <th class="Location">소재</th>
                         <th class="Name">대학교 이름</th>
-                        <th class="Num">재학생 수</th>
+                        <th class="Students">재학생 수</th>
                         <th class="Tag">태그</th>
                         <th class="SuLink">수시 링크</th>
                         <th class="JungLink">정시 링크</th>
