@@ -43,7 +43,7 @@
             text-decoration: underline;
         }
         a{
-            color: gray;
+            color: red;
             text-decoration: none;
             width: 75px;
         }
@@ -55,11 +55,12 @@
             align-items: center;
             justify-content: space-around;
             background-image: url("./Sub.png");
+            border: 1px solid black;
         }
         .text{
             width: 40%;
             height: 200px;
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             display: flex;
             align-items: center;
         }
@@ -107,11 +108,11 @@
             width: 100%;
         }
         .localTitle, .localBody, .colTitle, .colBody{
-            box-shadow: 
-                1px 0 0 0 black, 
-                0 1px 0 0 black, 
+            box-shadow:
+                1px 0 0 0 black,
+                0 1px 0 0 black,
                 1px 1px 0 0 black,
-                1px 0 0 0 black inset, 
+                1px 0 0 0 black inset,
                 0 1px 0 0 black inset;
         }
         .localTitle{
@@ -192,29 +193,37 @@
             height: 25px;
             right: 10px;
         }
-        .colleage{
+        .college{
             width: 100%;
             margin: 0px;
             border-collapse: collapse;
             line-height: 1.5;
             margin : 20px 10px;
             text-align: center;
+            background-color: #EEEEEE;
         }
         th, td{
-            border: 1px solid black;
+            border: 1px solid #CCCCCC;
             font-weight: bold;
         }
         .Place{
             width: 15%;
+            background-color: #AAAAAA;
         }
         .Name{
             width: 55%;
+            background-color: #DDDDDD;
         }
         .SuLink{
             width: 15%;
+            background-color: #DDDDDD;
         }
         .JungLink{
             width: 15%;
+            background-color: #DDDDDD;
+        }
+        .place{
+            background-color: #CCCCCC;
         }
     </style>
 </head>
@@ -294,7 +303,7 @@
             <img src="triangleDesign/triangle2.png" alt="Arrow" class="localPhoto" id="colArrow" onclick="hidDiv(this)">
         </div>
         <div class="colBody">
-            <table class="colleage">
+            <table class="college">
                 <!-- JStris -->
                 <thead>
                     <tr>
@@ -306,13 +315,13 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>서울특별시</td>
+                        <td class="place">서울특별시</td>
                         <td>서울대학교</td>
                         <td><a href="nolink">수시 링크</a></td>
                         <td><a href="noLink">정시 링크</a></td>
                     </tr>
                     <tr>
-                        <td>대전광역시</td>
+                        <td class="place">대전광역시</td>
                         <td>KAIST</td>
                         <td><a href="undeinfed">수시 링크</a></td>
                         <td><a href="NoLink">정시 링크</a></td>
