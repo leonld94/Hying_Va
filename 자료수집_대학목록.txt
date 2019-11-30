@@ -248,14 +248,69 @@ oo대학교        o
 12.http://      //정시링크(수시와 동일)
 
 안양대학교 
-용인대학교 1.o 2.x 3.o 4.x 5.o 6.x 7.x 8.x 9.x 10.6076 11.https://ipsi.yongin.ac.kr/susi/guide.do 12.https://ipsi.yongin.ac.kr/jungsi/guide.do
+
+용인대학교
+
+1.x 
+2.o 
+3.x 
+4.x 
+5.o 
+6.x 
+7.x 
+8.x 
+9.x 
+10.6076 
+11.https://ipsi.yongin.ac.kr/susi/guide.do 
+12.https://ipsi.yongin.ac.kr/jungsi/guide.do
+
 한국산업기술대학교
+
+1.x
+2.o
+3.x
+4.x
+5.o
+6.x
+7.o
+8.x
+9.x
+10.7370
+11.http://iphak.kpu.ac.kr/susi/guide.htm
+12.http://iphak.kpu.ac.kr/jungsi/guide.htm
+
 한세대학교
+
+1.x
+2.o
+3.x
+4.x
+5.o
+6.x
+7.o
+8.x
+7.x
+10.2828
+11.http://ipsi.hansei.ac.kr/ipsi/1071/subview.do
+12.http://ipsi.hansei.ac.kr/ipsi/1077/subview.do
+
 한신대학교
+
+1.x
+2.o
+3.x
+4.x
+5.o
+6.x
+7.o
+8.x
+9.x
+10.7359
 
 // 강원 대학
 
-가톨릭관동대학교
+//가톨릭관동대학교 //사건 사고 다수 발견
+
 상지대학교
 한라대학교
 
