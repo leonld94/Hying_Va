@@ -232,8 +232,8 @@
 
         var seoulListURL="https://leonld94.github.io/University_File/Seoul_Universities.json";
         var metroListURL="https://leonld94.github.io/University_File/Metro_Universities.json";
-        var ggListURL="https://leonld94.github.io/University_File/GG_Universities.json";            // 미완
-        var gwListURL="https://leonld94.github.io/University_File/GW_Universities.json";            //
+        var ggListURL="https://leonld94.github.io/University_File/GG_Universities.json";           
+        var gwListURL="https://leonld94.github.io/University_File/GW_Universities.json";            // 미완
         var gs_bListURL="https://leonld94.github.io/University_File/GS_B_Universities.json";        //
         var gs_nListURL="https://leonld94.github.io/University_File/GS_N_Universities.json";        //
         var jl_bListURL="https://leonld94.github.io/University_File/JL_B_Universities.json";        //
@@ -431,10 +431,15 @@
         metroRequest.send();
         metroRequest.onload = function (){
             metroFill(metroRequest.response);
+        }
+        ggRequest=new XMLHttpRequest();
+        ggRequest.open('get',ggListURL);
+        ggRequest.responseType='json';
+        ggRequest.send();
+        ggRequest.onload = function (){
+            ggFill(ggRequest.response);
             fillTable();    // 맨 마지막 수신에서 호출해야함
         }
-
-        // ggRequest=new XMLHttpRequest();
         // gwRequest=new XMLHttpRequest();
         // gs_bRequest=new XMLHttpRequest();
         // gs_nRequest=new XMLHttpRequest();

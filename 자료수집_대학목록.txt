@@ -892,8 +892,8 @@ oo대학교        o
 8.x
 9.x
 10.6915
-11.http://enter.anyang.ac.kr/
-12.http://enter.anyang.ac.kr/
+11.http://www.anyang.ac.kr/uploads/CONTENTS/site/enter/2020susi_f.pdf
+12.http://www.anyang.ac.kr/uploads/CONTENTS/site/enter/2020jung.pdf
 
 용인대학교
 1.x 
