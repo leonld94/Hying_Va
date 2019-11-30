@@ -604,16 +604,48 @@ oo대학교        o
 
 충남대학교
 1.o
+2.o
+3.x
+4.x
+5.o
+7.o
 8.o
+10.24089
+11.http://ipsi.cnu.ac.kr/html/uadm/sub01/sub01_0103.html
+12.http://ipsi.cnu.ac.kr/html/uadm/sub02/sub02_0203.html
 
 한밭대학교
 1.o
+2.o
+3.x
+4.x
+5.o
+7.o
+10.7832
+11.http://admission.hanbat.ac.kr/html/kr/synth/synth_0801.html
+12.http://admission.hanbat.ac.kr/html/kr/regular/regular_0207.html
 
 목원대학교
 1.o
+2.o
+3.x
+4.x
+5.o
+7.o
+10.7892
+11.http://enter.mokwon.ac.kr/new/html/frequent/frequent01.php
+12.http://enter.mokwon.ac.kr/new/html/fixed_period/fixed_period01.php
 
 한남대학교
 1.o
+2.o
+3.o
+4.x
+5.o
+7.o
+10.16685
+11.https://ibsi.hannam.ac.kr/adms5/occasional/1_1.asp
+12.https://ibsi.hannam.ac.kr/adms5/procedure/3_1.asp
 
 한국과학기술원
 1.o
