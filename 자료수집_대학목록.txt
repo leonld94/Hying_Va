@@ -587,12 +587,26 @@ oo대학교        o
 2.o
 3.x
 4.x
-6.o
 5.o
+6.o
 7.o
 10.17674
 11.https://admission.inha.ac.kr/cms/FR_CON/index.do?MENU_ID=80
 12.https://admission.inha.ac.kr/cms/FR_CON/index.do?MENU_ID=120
+
+인천대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 18619
+11. https://www.inu.ac.kr/ipsi/sub/susi/recruit.do
+12. https://www.inu.ac.kr/ipsi/sub/jeongsi/recruit.do
 
 // 광주 대학
 
@@ -616,7 +630,7 @@ oo대학교        o
 7.o
 10.9364
 11.https://enter.honam.ac.kr/susiPDF
-12.https://enter.honam.ac.kr/susiPDF
+12.https://enter.honam.ac.kr/jungsiPDF
 
 광주과학기술원
 1.o
@@ -718,23 +732,135 @@ oo대학교        o
 11.https://adm-u.unist.ac.kr/admission/guidelines/
 12.-
 
-// 전문대
-
-울산과학대학교
-1.o
 
 // 경기 대학
 
 한경대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. x
+7. x
+8. x
+9. x
+10. 5954
+11. https://ipsi.hknu.ac.kr/newhtml/html/02_2_guide.html
+12. https://ipsi.hknu.ac.kr/newhtml/html/03_2.guide.html
+
 가톨릭대학교
+1. x
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 7979
+11. http://ipsi.catholic.ac.kr/pages/?p=11&mj=01
+12. http://ipsi.catholic.ac.kr/pages/?p=16&mj=02
+
 강남대학교
+1. x
+2. o
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 6719
+11. https://admission.kangnam.ac.kr/jeonhyung/yogang.htm?ctg_cd=susi1
+12. https://admission.kangnam.ac.kr/jeonhyung/yogang.htm?ctg_cd=jungsi
+
 경기대학교
-6.o
+1. x
+2. x
+3. x
+4. x
+5. o
+6. o
+7. o
+8. x
+9. x
+10. 16650
+11. http://enter.kyonggi.ac.kr/pages/?p=10&mj=01
+12. http://enter.kyonggi.ac.kr/pages/?p=16&mj=02
+
 단국대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 35825
+11. http://ipsi.dankook.ac.kr/jukjeon/doumi/mojip.html?bbsid=juk_paper&ctg_cd=01
+12. http://ipsi.dankook.ac.kr/jukjeon/doumi/mojip.html?bbsid=juk_paper&ctg_cd=03
+
 대진대학교
+1. x
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 8903
+11. http://admission.daejin.ac.kr/boardview.do?pkid=4310&searchField=ALL&searchValue=&searchLpp=15&currentPage=1&searchItemGubun=B&bbsconfig=1
+12. http://admission.daejin.ac.kr/boardview.do?pkid=4520&searchField=ALL&searchValue=&searchLpp=15&currentPage=1&searchItemGubun=C&bbsconfig=1
+
 성결대학교
+1. x
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 5407
+11. http://ipsi.sungkyul.ac.kr/asp_sub/sub1/0101.asp?tab1=1
+12. http://ipsi.sungkyul.ac.kr/asp_sub/sub2/0101.asp?tab1=2
+
 수원대학교
+1. x
+2. o
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 12649
+11. https://ipsi.suwon.ac.kr/index.html?menuno=2057
+12. https://ipsi.suwon.ac.kr/index.html?menuno=2063
+
 아주대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 9850
+11. http://www.iajou.ac.kr/susi/mojip.do?gb=mojip
+12. http://www.iajou.ac.kr/jungsi/mojip.do?gb=mojip
+
 =>
 
 
@@ -822,12 +948,13 @@ oo대학교        o
 8.x
 9.x
 10.7359
-11.(사이트 안들어가짐)
-12.(사이트 안들어가짐) 
+11.http://ent.hs.ac.kr/ipsi/pages/?p=2&mj=01
+12.http://ent.hs.ac.kr/ipsi/pages/?p=7&mj=02
 
 // 강원 대학
 
-//가톨릭관동대학교 //보류 사건 사고 다수 발견
+강원대학교
+
 
 상지대학교
 1.o
@@ -1179,17 +1306,102 @@ oo대학교        o
 
 
 포항공과대학교
-6.o
-
-한동대학교
+1. o
+2. x
+3. o
+4. x
+5. o
+6. o
+7. o
+8. x
+9. x
+10. 1422
+11. -
+12. https://admission.postech.ac.kr/link.do?f=sub2-0
 
 // 경상남도 대학
 
+한동대학교
+1. o
+2. x
+3. o
+4. x
+5. o
+6. o
+7. o
+8. x
+9. x
+10. 3946
+11. http://admissions.handong.edu/early/view/
+12. -
+
 경상대학교
+1. o
+2. x
+3. x
+4. x
+5. o
+6. x
+7. x
+8. o
+9. x
+10. 20420
+11. https://new.gnu.ac.kr/sub/02_01.jsp
+12. https://new.gnu.ac.kr/sub/03_01.jsp
+
 창원대학교
+1. o
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 11497
+11. http://ipsi.changwon.ac.kr/html/01_nonscheduled/nonscheduled_0101.php
+12. http://ipsi.changwon.ac.kr/html/02_regular/regular_0101.php
+
 경남대학교
-3.o
+1. o
+2. x
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 11959
+11. http://ipsi.kyungnam.ac.kr/sub.html?seq=10
+12. http://ipsi.kyungnam.ac.kr/sub.html?seq=50
+
 영산대학교
-3.o
+1. o
+2. o
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 6942
+11. https://ipsi.ysu.ac.kr/sub_susi/01.asp
+12. https://ipsi.ysu.ac.kr/sub_jeongsi/01.asp
+
 인제대학교
+1. o
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 12312
+11. https://iphak.inje.ac.kr/contents/contents.asp?m=1&m2=1&m3=1
+12. https://iphak.inje.ac.kr/contents/contents.asp?m=2&m2=1&m3=1
 =>
