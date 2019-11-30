@@ -93,6 +93,7 @@
             width: 10%;
             background-color: #DDDDDD;
         }
+        
         #Tag{
             width: 45%;
             background-color: #DDDDDD;
@@ -141,6 +142,12 @@
             color: white;
             padding: 2px 5px;
             margin: 0px 5px;
+        }
+        .sortArrow{
+            position: relative;
+            width: 15px;
+            height: 15px;
+            right: 1px;
         }
         .Prov{
             background-color: #92D050;
@@ -458,7 +465,8 @@
                     namUp=true;
 
                 }
-
+                //여기에서 화살표 돌리기
+                var arrows = document.getElementsByClassName('')
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
@@ -759,9 +767,9 @@
                 <thead>
                     <tr>
                         <th id="Location">소재</th>
-                        <th id="Name" onmousedown="sortName()">대학교 이름</th>
-                        <th id="Students" onmousedown="sortStud()">재학생 수</th>
-                        <th id="Tag" onmousedown="sortTags()">태그</th>
+                        <th id="Name" onmousedown="sortName()" class="tableHead">대학교 이름 <img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow" onclick=""></th>
+                        <th id="Students" onmousedown="sortStud()" class="tableHead">재학생 수<img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
+                        <th id="Tag" onmousedown="sortTags()" class="tableHead">태그<img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
                         <th id="SuLink">수시 링크</th>
                         <th id="JungLink">정시 링크</th>
                     </tr>
