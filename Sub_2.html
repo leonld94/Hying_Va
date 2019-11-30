@@ -233,8 +233,8 @@
         var seoulListURL="https://leonld94.github.io/University_File/Seoul_Universities.json";
         var metroListURL="https://leonld94.github.io/University_File/Metro_Universities.json";
         var ggListURL="https://leonld94.github.io/University_File/GG_Universities.json";           
-        var gwListURL="https://leonld94.github.io/University_File/GW_Universities.json";            // 미완
-        var gs_bListURL="https://leonld94.github.io/University_File/GS_B_Universities.json";        //
+        var gwListURL="https://leonld94.github.io/University_File/GW_Universities.json";            
+        var gs_bListURL="https://leonld94.github.io/University_File/GS_B_Universities.json";        // 미완
         var gs_nListURL="https://leonld94.github.io/University_File/GS_N_Universities.json";        //
         var jl_bListURL="https://leonld94.github.io/University_File/JL_B_Universities.json";        //
         var jl_nListURL="https://leonld94.github.io/University_File/JL_N_Universities.json";        //
@@ -426,27 +426,70 @@
             seoulFill(seoulRequest.response);
         }
         metroRequest=new XMLHttpRequest();
-        metroRequest.open('get',metroListURL);
+        metroRequest.open('Get',metroListURL);
         metroRequest.responseType='json';
         metroRequest.send();
         metroRequest.onload = function (){
             metroFill(metroRequest.response);
         }
         ggRequest=new XMLHttpRequest();
-        ggRequest.open('get',ggListURL);
+        ggRequest.open('Get',ggListURL);
         ggRequest.responseType='json';
         ggRequest.send();
         ggRequest.onload = function (){
             ggFill(ggRequest.response);
+        }
+        gwRequest=new XMLHttpRequest();
+        gwRequest.open('Get',gwListURL);
+        gwRequest.responseType='json';
+        gwRequest.send();
+        gwRequest.onload = function (){
+            gwFill(gwRequest.response);
             fillTable();    // 맨 마지막 수신에서 호출해야함
         }
-        // gwRequest=new XMLHttpRequest();
+
         // gs_bRequest=new XMLHttpRequest();
+        // gs_bRequest.open('Get',gs_bListURL);
+        // gs_bRequest.responseType='json';
+        // gs_bRequest.send();
+        // gs_bRequest.onload = function (){
+        //     gs_bFill(gs_bRequest.response);
+        // }
         // gs_nRequest=new XMLHttpRequest();
+        // gs_nRequest.open('Get',gs_nListURL);
+        // gs_nRequest.responseType='json';
+        // gs_nRequest.send();
+        // gs_nRequest.onload = function (){
+        //     gs_nFill(gs_nRequest.response);
+        // }
         // jl_bRequest=new XMLHttpRequest();
+        // jl_bRequest.open('Get',jl_bListURL);
+        // jl_bRequest.responseType='json';
+        // jl_bRequest.send();
+        // jl_bRequest.onload = function (){
+        //     jl_bFill(jl_bRequest.response);
+        // }
         // jl_nRequest=new XMLHttpRequest();
+        // jl_nRequest.open('Get',jl_nListURL);
+        // jl_nRequest.responseType='json';
+        // jl_nRequest.send();
+        // jl_nRequest.onload = function (){
+        //     jl_nFill(jl_nRequest.response);
+        // }
         // cc_bRequest=new XMLHttpRequest();
+        // cc_bRequest.open('Get',cc_bListURL);
+        // cc_bRequest.responseType='json';
+        // cc_bRequest.send();
+        // cc_bRequest.onload = function (){
+        //     cc_bFill(cc_bRequest.response);
+        // }
         // cc_nRequest=new XMLHttpRequest();
+        // cc_nRequest.open('Get',cc_nListURL);
+        // cc_nRequest.responseType='json';
+        // cc_nRequest.send();
+        // cc_nRequest.onload = function (){
+        //     cc_nFill(cc_nRequest.response);
+        // }
 
         function clearHeap(){   // Heap 좀 지워줘요. 이거 하고나면 다 empty 되니까 비교할때 에러 안나서 좋음
             Heap=new Array(140);
