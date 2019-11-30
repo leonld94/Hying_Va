@@ -630,7 +630,7 @@ oo대학교        o
 7.o
 10.9364
 11.https://enter.honam.ac.kr/susiPDF
-12.https://enter.honam.ac.kr/susiPDF
+12.https://enter.honam.ac.kr/jungsiPDF
 
 광주과학기술원
 1.o
@@ -732,9 +732,6 @@ oo대학교        o
 11.https://adm-u.unist.ac.kr/admission/guidelines/
 12.-
 
-// 전문대
-
-울산과학대학교
 
 // 경기 대학
 
