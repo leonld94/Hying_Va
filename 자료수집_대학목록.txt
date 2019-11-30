@@ -206,11 +206,27 @@ oo대학교        o
 
 호남대학교
 1.o
+2.o
+3.o
+4.x
+5.o
+7.o
+10.9364
+11.https://enter.honam.ac.kr/susiPDF
+12.https://enter.honam.ac.kr/susiPDF
 
 광주과학기술원
 1.o
+2.x
+3.x
+4.x
+5.o
 6.o
+7.o
 9.o
+10.949
+11.https://www.gist.ac.kr/uadm/html/sub02/020101.html
+12.https://www.gist.ac.kr/uadm/html/sub02/0202.html
 
 // 대전 대학
 
