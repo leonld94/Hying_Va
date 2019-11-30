@@ -64,7 +64,7 @@ oo대학교        o
 2.o
 3.o
 4.x
-5.oo대학교6.x
+5.o
 6.x
 7.o
 8.x
@@ -84,9 +84,6 @@ oo대학교        o
 10.29091
 11.http://go.pusan.ac.kr/college_2016/pages/index.asp?p=3&mj=01
 12.http://go.pusan.ac.kr/college_2016/pages/index.asp?p=13&mj=02
-
-한국해양대학교
-1.o
 
 경성대학교
 1.o
@@ -146,11 +143,11 @@ oo대학교        o
 
 신라대학교
 1.o
-2.(정보과임)
+2.o
 3.x
 4.x
 5.o
-7.(정보과임)
+7.o
 10.9616
 11.https://ipsi.silla.ac.kr/ipsi/index.php?pCode=sihandbk
 12.https://ipsi.silla.ac.kr/ipsi/index.php?pCode=jihandbk
@@ -159,21 +156,53 @@ oo대학교        o
 
 계명대학교
 1.o
+2.o
+3.o
+4.x
+5.o
+7.o
+10.23435
+11.https://www.gokmu.ac.kr/guide/paper.htm?ctg_cd=susi
+12.https://www.gokmu.ac.kr/guide/paper.htm?ctg_cd=jungsi
 
 대구경북과학기술원
 1.o
+2.x
+3.x
+4.x
+5.o
+7.x
 9.o
+10.755
+11.https://www.dgist.ac.kr/adm/html/sub02/020202.html
+12.https://www.dgist.ac.kr/adm/html/sub03/030102.html
 
 // 인천 대학
 
 인하대학교
 1.x
+2.o
+3.x
+4.x
 6.o
+5.o
+7.o
+10.17674
+11.https://admission.inha.ac.kr/cms/FR_CON/index.do?MENU_ID=80
+12.https://admission.inha.ac.kr/cms/FR_CON/index.do?MENU_ID=120
 
 // 광주 대학
 
 조선대학교
 1.o
+2.o
+3.o
+4.x
+5.o
+7.o
+10.19240
+11.http://ibhak.chosun.ac.kr/contents.php?mc=9
+12.http://ibhak.chosun.ac.kr/contents.php?mc=16
 
 호남대학교
 1.o
@@ -205,6 +234,9 @@ oo대학교        o
 
 // 울산 대학
 
+울산대학교
+1.o
+6.o
 울산과학기술원
 1.o
 6.o
