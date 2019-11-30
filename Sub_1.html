@@ -229,20 +229,214 @@
             background-color: #CCCCCC;
         }
     </style>
+    <script>
+        let count = [0,0];
+        let i;
+        const hidDiv = th => {
+            const div = document.getElementsByName('localDiv')
+            i = (th.id == 'selArrow') ? 0 : 1;
+            count[i]++
+            th.style.cssText = `display: flex; transition: 0.5s; transform: rotate(${count[i] * 180}deg);`
+            console.log(div)
+            div[i].style.cssText = 'display: flex; transition: 1s;'
+            div[i].style.marginTop = `${(-count[i] % 2) * 100 / 2}%`
+        }
+
+
+
+        var exCollege = new Array(50);
+
+        var seoulCollege = new Array(32);   // 서울
+        var metroCollege = new Array(24);   // 광역시
+        var ggCollege = new Array(15);      // 경기도
+        var gwCollege = new Array(50);      // 강원도
+        var gs_bCollege = new Array(50);    // 경상북도
+        var gs_nCollege = new Array(50);    // 경상남도
+        var jl_bCollege = new Array(50);    // 전라북도
+        var jl_nCollege = new Array(50);    // 전라남도
+        var cc_bCollege = new Array(50);    // 충청북도
+        var cc_nCollege = new Array(50);    // 충청남도
+        var allCollege = new Array(140);    // 전체 대학 총괄
+
+        var Heap = new Array(140);          // 정렬용 배열
+
+        var allCounter = 0;
+
+        var exRequest;
+        var exListURL="https://leonld94.github.io/University_File/Example_Universities.json"
+
+        var seoulRequest;
+        var metroRequest;
+        var ggRequest;
+        var gwRequest;
+        var gs_bRequest;
+        var gs_nRequest;
+        var jl_bRequest;
+        var jl_nRequest;
+        var cc_bRequest;
+        var cc_nRequest;
+
+        var seoulListURL="https://leonld94.github.io/University_File/Seoul_Universities.json";      // 미완
+        var metroListURL="https://leonld94.github.io/University_File/Metro_Universities.json";      //
+        var ggListURL="https://leonld94.github.io/University_File/GG_Universities.json";            //
+        var gwListURL="https://leonld94.github.io/University_File/GW_Universities.json";            //
+        var gs_bListURL="https://leonld94.github.io/University_File/GS_B_Universities.json";        //
+        var gs_nListURL="https://leonld94.github.io/University_File/GS_N_Universities.json";        //
+        var jl_bListURL="https://leonld94.github.io/University_File/JL_B_Universities.json";        //
+        var jl_nListURL="https://leonld94.github.io/University_File/JL_N_Universities.json";        //
+        var cc_bListURL="https://leonld94.github.io/University_File/CC_B_Universities.json";        //
+        var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        //
+
+
+        function exFill(json){
+            var i,end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                exCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }  
+        function seoulFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                seoulCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function metroFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                metroCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function ggFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                ggCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function gwFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                gwCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }   
+        }
+        function gs_bFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                gs_bCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function gs_nFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                gs_nCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function jl_bFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                jl_bCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function jl_nFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                jl_nCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function cc_bFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                cc_bCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }
+        }
+        function cc_nFill(json){
+            var i, end;
+            end=json.universities.length;
+            for(i=0;i<end;i++,allCounter++){
+                cc_nCollege[i]=json.universities[i];
+                allCollege[allCounter]=json.universities[i];
+                Heap[allCounter]=json.universities[i];
+            }   
+        }
+
+        function fillTable(){                   // 여기 새로 짜야함
+            var tbody=document.getElementsByTagName("tbody")[0];
+            var iter, end;
+            var jter, fnd;
+
+            end=allCounter;
+    
+            for(iter=0;iter<end;iter++){
+                var newchild=document.createElement("tr");
+
+                var loc=document.createElement("td");
+                loc.setAttribute("class","place");
+                loc.innerHTML=Heap[iter].location;
+                newchild.appendChild(loc);
+
+                var name=document.createElement("td");
+                name.innerHTML=Heap[iter].college_name;
+                newchild.appendChild(name);
+
+                var early=document.createElement("td");
+                if(Heap[iter].early_link == "")
+                    early.innerHTML="-";
+                else
+                    early.innerHTML="<a href='"+Heap[iter].early_link+"' target='_blank'>링크</a>";
+                newchild.appendChild(early);
+
+                var regular=document.createElement("td");
+                if(Heap[iter].regular_link == "")
+                    regular.innerHTML="-";
+                else
+                    regular.innerHTML="<a href='"+Heap[iter].regular_link+"' target='_blank'>링크</a>";
+                newchild.appendChild(regular);
+
+                tbody.appendChild(newchild);
+            }
+        }
+
+
+        exRequest=new XMLHttpRequest();
+        exRequest.open('Get',exListURL);
+        exRequest.responseType='json';
+        exRequest.send();
+        exRequest.onload = function (){
+            exFill(exRequest.response);
+            fillTable();    // 맨 마지막 수신에서 호출해야함
+        }
+
+    </script>
 </head>
-<script>
-    let count = [0,0];
-    let i;
-    const hidDiv = th => {
-        const div = document.getElementsByName('localDiv')
-        i = (th.id == 'selArrow') ? 0 : 1;
-        count[i]++
-        th.style.cssText = `display: flex; transition: 0.5s; transform: rotate(${count[i] * 180}deg);`
-        console.log(div)
-        div[i].style.cssText = 'display: flex; transition: 1s;'
-        div[i].style.marginTop = `${(-count[i] % 2) * 100 / 2}%`
-    }
-</script>
 <body>
     <header>
         <div class="logo">
