@@ -1011,20 +1011,79 @@ oo대학교        o
 10.9027
 11.http://ipsi.mokpo.ac.kr/index.9is?contentUid=4a94e3926cb381c9016cb3b4cacb00cb
 12.http://ipsi.mokpo.ac.kr/index.9is?contentUid=4a94e3926cb381c9016cb3b5149100cd
-목포해양대학교
 
 동신대학교
+1.o
+2.o
+3.x
+4.x
+5.o
+6.x
+7.o
+8.x
+9.x
+10.8559
+11.https://ipsi.dsu.ac.kr/ipsi/index.php?pCode=ocguide
+12.https://ipsi.dsu.ac.kr/ipsi/index.php?pCode=otguide
 
 // 경상북도 대학
 
 금오공과대학교
+1.o
+2.o
+3.x
+4.x
+5.o
+6.x
+7.o
+8.x
+9.x
+10.8860
+11.http://iphak.kumoh.ac.kr/ipsi/sub0101.do
+12.http://iphak.kumoh.ac.kr/ipsi/sub0201.do
 
 안동대학교
+1.o
+2.o
+3.x
+4.x
+5.o
+6.x
+7.o
+8.x
+9.x
+10.6040
+11.http://ipsi.andong.ac.kr/new/admission/sub.htm?nav_code=and1536915398
+12.http://ipsi.andong.ac.kr/new/admission/sub.htm?nav_code=and1537234541
 
 경일대학교
+1.o
+2.o
 3.o
+4.x
+5.o
+6.x
+7.o
+8.x
+9.x
+10.7014
+11.http://ibsi.kiu.ac.kr/admission/sub.htm?nav_code=ips1556254569
+12.http://ibsi.kiu.ac.kr/admission/sub.htm?nav_code=ips1556273308
+
 영남대학교
+1.o
+2.o
 3.o
+4.x
+5.o
+6.x
+7.o
+8.x
+9.x
+10.29887
+11.https://enter.yu.ac.kr/susi/guide.htm?etc1=1&ctg_cd=susi
+12.https://enter.yu.ac.kr/susi/guide.htm?etc1=2&page=1
+
 =>
 
 
