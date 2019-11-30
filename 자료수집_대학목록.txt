@@ -649,18 +649,43 @@ oo대학교        o
 
 한국과학기술원
 1.o
+2.x
+3.x
+4.x
+5.o
 6.o
+7.o
 9.o
+10.3873
+11.https://admission.kaist.ac.kr/undergraduate/%EC%88%98%EC%8B%9C/
+12.https://admission.kaist.ac.kr/undergraduate/%ec%a0%95%ec%8b%9c/
 
 // 울산 대학
 
 울산대학교
 1.o
+2.o
+3.x
+4.x
+5.o
 6.o
+7.o
+10.12184
+11.http://iphak.ulsan.ac.kr/sub/info.do?m=0101&s=iphak
+12.http://iphak.ulsan.ac.kr/sub/info.do?m=0104&s=iphak
+
 울산과학기술원
 1.o
+2.x
+3.x
+4.x
+5.o
 6.o
+7.o
 9.o
+10.3090
+11.https://adm-u.unist.ac.kr/admission/guidelines/
+12.-
 
 // 전문대
 
