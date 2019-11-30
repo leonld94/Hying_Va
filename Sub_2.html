@@ -19,12 +19,11 @@
         .logo{
             width: 150px;
             height: 60px;
-            border: 1px solid black;
             border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: blue;
+            background-color: lightgray;
             color: white;
         }
         .empty{
@@ -241,6 +240,9 @@
         var jl_nListURL="https://leonld94.github.io/University_File/JL_N_Universities.json";        //
         var cc_bListURL="https://leonld94.github.io/University_File/CC_B_Universities.json";        //
         var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        //
+
+        var arrows = document.getElementsByClassName('sortArrow');
+        var statusArrows = [0, 0, 0];
 
 
         function exFill(json){
@@ -750,7 +752,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="" alt="GUI Logo">
+            <img src="logo.png" alt="GUI Logo" onclick="location.href='Main_Page.html';" style="width: 120px; height: auto;">
         </div>
         <div class="empty"></div>
         <div class="infor">
