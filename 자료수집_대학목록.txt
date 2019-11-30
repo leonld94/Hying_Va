@@ -736,14 +736,130 @@ oo대학교        o
 // 경기 대학
 
 한경대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. x
+7. x
+8. x
+9. x
+10. 5954
+11. https://ipsi.hknu.ac.kr/newhtml/html/02_2_guide.html
+12. https://ipsi.hknu.ac.kr/newhtml/html/03_2.guide.html
+
 가톨릭대학교
+1. x
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 7979
+11. http://ipsi.catholic.ac.kr/pages/?p=11&mj=01
+12. http://ipsi.catholic.ac.kr/pages/?p=16&mj=02
+
 강남대학교
+1. x
+2. o
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 6719
+11. https://admission.kangnam.ac.kr/jeonhyung/yogang.htm?ctg_cd=susi1
+12. https://admission.kangnam.ac.kr/jeonhyung/yogang.htm?ctg_cd=jungsi
+
 경기대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. o
+7. o
+8. x
+9. x
+10. 16650
+11. http://enter.kyonggi.ac.kr/pages/?p=10&mj=01
+12. http://enter.kyonggi.ac.kr/pages/?p=16&mj=02
+
 단국대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 35825
+11. http://ipsi.dankook.ac.kr/jukjeon/doumi/mojip.html?bbsid=juk_paper&ctg_cd=01
+12. http://ipsi.dankook.ac.kr/jukjeon/doumi/mojip.html?bbsid=juk_paper&ctg_cd=03
+
 대진대학교
+1. x
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 8903
+11. http://admission.daejin.ac.kr/boardview.do?pkid=4310&searchField=ALL&searchValue=&searchLpp=15&currentPage=1&searchItemGubun=B&bbsconfig=1
+12. http://admission.daejin.ac.kr/boardview.do?pkid=4520&searchField=ALL&searchValue=&searchLpp=15&currentPage=1&searchItemGubun=C&bbsconfig=1
+
 성결대학교
+1. x
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 5407
+11. http://ipsi.sungkyul.ac.kr/asp_sub/sub1/0101.asp?tab1=1
+12. http://ipsi.sungkyul.ac.kr/asp_sub/sub2/0101.asp?tab1=2
+
 수원대학교
+1. x
+2. o
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 12649
+11. https://ipsi.suwon.ac.kr/index.html?menuno=2057
+12. https://ipsi.suwon.ac.kr/index.html?menuno=2063
+
 아주대학교
+1. x
+2. x
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 9850
+11. http://www.iajou.ac.kr/susi/mojip.do?gb=mojip
+12. http://www.iajou.ac.kr/jungsi/mojip.do?gb=mojip
 
 =>
 
