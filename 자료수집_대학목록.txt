@@ -954,7 +954,18 @@ oo대학교        o
 // 강원 대학
 
 강원대학교
-
+1.o
+2.x
+3.o
+4.x
+5.o
+6.x
+7.o
+8.o
+9.x
+10.20168
+11.https://www.kangwon.ac.kr/admission01/contents.do?key=1909&
+12.https://www.kangwon.ac.kr/admission01/contents.do?key=967&
 
 상지대학교
 1.o
