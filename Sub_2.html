@@ -667,7 +667,7 @@
 			            if (right >= wall)right = 0;
 			            if (left >= wall)left = 0;
 
-			            if (Heap[left].tags.length < Heap[right].tags.length && Heap[left].tags.length < Heap[now].tags.length) {       //non
+			            if (Heap[left].tags.length <= Heap[right].tags.length && Heap[left].tags.length < Heap[now].tags.length) {       //non
                             tmp=Heap[left];
                             Heap[left]=Heap[now];
                             Heap[now]=tmp;
