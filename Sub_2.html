@@ -500,7 +500,7 @@
 			            if (right >= wall)right = 0;
 			            if (left >= wall)left = 0;
 
-			            if (Heap[left].college_name < Heap[right].college_name && Heap[left].college_name < Heap[now].college_name) {       //non
+			            if (Heap[left].college_name <= Heap[right].college_name && Heap[left].college_name < Heap[now].college_name) {       //non
                             tmp=Heap[left];
                             Heap[left]=Heap[now];
                             Heap[now]=tmp;
@@ -586,7 +586,7 @@
 			            if (right >= wall)right = 0;
 			            if (left >= wall)left = 0;
 
-			            if (Heap[left].students < Heap[right].students && Heap[left].students < Heap[now].students) {       //non
+			            if (Heap[left].students <= Heap[right].students && Heap[left].students < Heap[now].students) {       //non
                             tmp=Heap[left];
                             Heap[left]=Heap[now];
                             Heap[now]=tmp;
