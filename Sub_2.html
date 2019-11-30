@@ -238,8 +238,8 @@
         var gs_nListURL="https://leonld94.github.io/University_File/GS_N_Universities.json";        //
         var jl_bListURL="https://leonld94.github.io/University_File/JL_B_Universities.json";        //
         var jl_nListURL="https://leonld94.github.io/University_File/JL_N_Universities.json";        //
-        var cc_bListURL="https://leonld94.github.io/University_File/CC_B_Universities.json";        //
-        var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        //
+        var cc_bListURL="https://leonld94.github.io/University_File/CC_B_Universities.json";        
+        var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        
 
         var arrows = document.getElementsByClassName('sortArrow');
         var statusArrows = [0, 0, 0];
@@ -445,7 +445,6 @@
         gwRequest.send();
         gwRequest.onload = function (){
             gwFill(gwRequest.response);
-            fillTable();    // 맨 마지막 수신에서 호출해야함
         }
 
         // gs_bRequest=new XMLHttpRequest();
@@ -476,20 +475,21 @@
         // jl_nRequest.onload = function (){
         //     jl_nFill(jl_nRequest.response);
         // }
-        // cc_bRequest=new XMLHttpRequest();
-        // cc_bRequest.open('Get',cc_bListURL);
-        // cc_bRequest.responseType='json';
-        // cc_bRequest.send();
-        // cc_bRequest.onload = function (){
-        //     cc_bFill(cc_bRequest.response);
-        // }
-        // cc_nRequest=new XMLHttpRequest();
-        // cc_nRequest.open('Get',cc_nListURL);
-        // cc_nRequest.responseType='json';
-        // cc_nRequest.send();
-        // cc_nRequest.onload = function (){
-        //     cc_nFill(cc_nRequest.response);
-        // }
+        cc_bRequest=new XMLHttpRequest();
+        cc_bRequest.open('Get',cc_bListURL);
+        cc_bRequest.responseType='json';
+        cc_bRequest.send();
+        cc_bRequest.onload = function (){
+            cc_bFill(cc_bRequest.response);
+        }
+        cc_nRequest=new XMLHttpRequest();
+        cc_nRequest.open('Get',cc_nListURL);
+        cc_nRequest.responseType='json';
+        cc_nRequest.send();
+        cc_nRequest.onload = function (){
+            cc_nFill(cc_nRequest.response);
+            fillTable();    // 맨 마지막 수신에서 호출해야함
+        }
 
         function clearHeap(){   // Heap 좀 지워줘요. 이거 하고나면 다 empty 되니까 비교할때 에러 안나서 좋음
             Heap=new Array(140);
