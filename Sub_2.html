@@ -401,12 +401,18 @@
         exRequest.send();
         exRequest.onload = function (){
             exFill(exRequest.response);
-            fillTable();    // 맨 마지막 수신에서 호출해야함
         }
 
 
         /// 파일 완성되면 하나씩 될 것
-        // seoulRequest=new XMLHttpRequest();
+        seoulRequest=new XMLHttpRequest();
+        seoulRequest.open('Get',seoulListURL);
+        seoulRequest.responseType='json';
+        seoulRequest.send();
+        seoulRequest.onload = function (){
+            seoulFill(seoulRequest.response);
+            fillTable();    // 맨 마지막 수신에서 호출해야함
+        }
         // metroRequest=new XMLHttpRequest();
         // ggRequest=new XMLHttpRequest();
         // gwRequest=new XMLHttpRequest();
