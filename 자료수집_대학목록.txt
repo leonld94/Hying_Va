@@ -60,45 +60,160 @@ oo대학교        o
 // 부산 대학
 
 부경대학교
+1.o
+2.o
+3.o
+4.x
+5.oo대학교6.x
+6.x
+7.o
+8.x
+9.x
+10.16655
+11.http://iphak.pknu.ac.kr/pknu/plan/index.htm?code=susi
+12.http://iphak.pknu.ac.kr/pknu/plan/index.htm?code=jungsi
+
 부산대학교
+1.o
+2.x
+3.x
+4.x
+5.o
+7.o
+8.o
+10.29091
+11.http://go.pusan.ac.kr/college_2016/pages/index.asp?p=3&mj=01
+12.http://go.pusan.ac.kr/college_2016/pages/index.asp?p=13&mj=02
+
 한국해양대학교
+1.o
+
 경성대학교
+1.o
+2.o
+3.x
+4.x
+5.o
+7.o
+10.12448
+11.http://kscms.ks.ac.kr/ipsi/CMS/Contents/Contents.do?mCode=MN025
+12.http://kscms.ks.ac.kr/ipsi/CMS/Contents/Contents.do?mCode=MN031
+
 동명대학교
+1.o
+2.o
+3.o
+4.x
+5.o
+7.o
+10.12100
+11.http://iphak.tu.ac.kr/default/sub/subLocation.tu?categorySeq=1002005&menuSeq=100200509&confSeq=&boardSeq=-1
+12.http://iphak.tu.ac.kr/default/sub/subLocation.tu?categorySeq=1002007&menuSeq=100200724&confSeq=&boardSeq=-1
+
 동서대학교
+1.o
+2.o
+3.x
+4.x
+5.o
+7.o
+10.10581
+11.http://ipsi.dongseo.ac.kr/ipsi/?pCode=sihandbk
+12.http://ipsi.dongseo.ac.kr/ipsi/index.php?pCode=jihandbk
+
 동아대학교
+1.o
+2.o
+3.x
+4.x
+5.o
+6.o
+7.o
+10.26961
+11.http://ent.donga.ac.kr/admission/html/rolling/guide.asp
+12.http://ent.donga.ac.kr/admission/html/regular/guide.asp
+
 부산외국어대학교
+1.o
+2.o
+3.x
+4.x
+5.o
+7.o
+10.12352
+11.https://enter.bufs.ac.kr/enter/index.php?pCode=enter_11
+12.https://enter.bufs.ac.kr/enter/index.php?pCode=MN000078
+
 신라대학교
+1.o
+2.(정보과임)
+3.x
+4.x
+5.o
+7.(정보과임)
+10.9616
+11.https://ipsi.silla.ac.kr/ipsi/index.php?pCode=sihandbk
+12.https://ipsi.silla.ac.kr/ipsi/index.php?pCode=jihandbk
 
 // 대구 대학
 
 계명대학교
+1.o
+
 대구경북과학기술원
+1.o
+9.o
 
 // 인천 대학
 
 인하대학교
+1.x
+6.o
 
 // 광주 대학
 
 조선대학교
+1.o
+
 호남대학교
+1.o
+
 광주과학기술원
+1.o
+6.o
+9.o
 
 // 대전 대학
 
 충남대학교
+1.o
+8.o
+
 한밭대학교
+1.o
+
 목원대학교
+1.o
+
 한남대학교
+1.o
+
 한국과학기술원
+1.o
+6.o
+9.o
 
 // 울산 대학
 
 울산과학기술원
+1.o
+6.o
+9.o
 
 // 전문대
 
 울산과학대학교
+1.o
 
 // 경기 대학
 
@@ -106,6 +221,7 @@ oo대학교        o
 가톨릭대학교
 강남대학교
 경기대학교
+6.o
 단국대학교
 대진대학교
 성결대학교
@@ -187,6 +303,8 @@ oo대학교        o
 
 
 포항공과대학교
+6.o
+
 한동대학교
 
 // 경상남도 대학
