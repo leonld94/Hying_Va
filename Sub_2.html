@@ -203,6 +203,10 @@
         var nameSort = false;
         var studSort = false;
         var tagsSort = false;
+        var nameUp = false;
+        var studUp = false;
+        var tagsUp = false;
+        
 
         var allCounter = 1;
 
@@ -446,7 +450,15 @@
         function sortName(){          // name의 경우만 특별하게 앞뒤를 뒤집어줘야함
             if(nameSort == true)    // 뒤집으면 됨
             {   
-                nameSort=false;
+                if(nameUp) {
+                    nameUp=false;
+
+                }
+                else {
+                    namUp=true;
+
+                }
+
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
@@ -466,6 +478,9 @@
                 studSort=false;
                 tagsSort=false;
                 nameSort=true;
+                nameUp=true;
+                studUp=false;
+                tagsUp=false;
                 // 정렬
                 var iter,end;
                 var now,dvs,tmp,left,right,wall;
@@ -532,7 +547,15 @@
         function sortStud(){
             if(studSort == true) // 뒤집기
             {
-                studSort=false;
+                if(studUp){
+                    studUp=false;
+
+                }
+                else {
+                    studUp=true;
+
+                }
+                
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
@@ -552,6 +575,10 @@
                 nameSort=false;
                 tagsSort=false;
                 studSort=true;
+                nameUp=false;
+                studUp=true;
+                tagsUp=false;
+
                 var iter,end;
                 var now,dvs,tmp,left,right,wall;
                 end=allCounter;
@@ -613,7 +640,15 @@
         function sortTags(){
             if(tagsSort == true) // 뒤집기
             {   
-                tagsSort=false;
+                if(tagsUp){
+                    tagsUp=false;
+
+                }
+                else{
+                    tagsUp=true;
+                    
+                }
+
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
@@ -633,6 +668,10 @@
                 nameSort=false;
                 studSort=false;
                 tagsSort=true;
+                nameUp=false;
+                studUp=false;
+                tagsUp=true;
+
                 var iter,end;
                 var now,dvs,tmp,left,right,wall;
                 end=allCounter;
