@@ -1179,17 +1179,102 @@ oo대학교        o
 
 
 포항공과대학교
-6.o
-
-한동대학교
+1. o
+2. x
+3. o
+4. x
+5. o
+6. o
+7. o
+8. x
+9. x
+10. 1422
+11. -
+12. https://admission.postech.ac.kr/link.do?f=sub2-0
 
 // 경상남도 대학
 
+한동대학교
+1. o
+2. x
+3. o
+4. x
+5. o
+6. o
+7. o
+8. x
+9. x
+10. 3946
+11. http://admissions.handong.edu/early/view/
+12. -
+
 경상대학교
+1. o
+2. x
+3. x
+4. x
+5. o
+6. x
+7. x
+8. o
+9. x
+10. 20420
+11. https://new.gnu.ac.kr/sub/02_01.jsp
+12. https://new.gnu.ac.kr/sub/03_01.jsp
+
 창원대학교
+1. o
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 11497
+11. http://ipsi.changwon.ac.kr/html/01_nonscheduled/nonscheduled_0101.php
+12. http://ipsi.changwon.ac.kr/html/02_regular/regular_0101.php
+
 경남대학교
-3.o
+1. o
+2. x
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 11959
+11. http://ipsi.kyungnam.ac.kr/sub.html?seq=10
+12. http://ipsi.kyungnam.ac.kr/sub.html?seq=50
+
 영산대학교
-3.o
+1. o
+2. o
+3. o
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 6942
+11. https://ipsi.ysu.ac.kr/sub_susi/01.asp
+12. https://ipsi.ysu.ac.kr/sub_jeongsi/01.asp
+
 인제대학교
+1. o
+2. o
+3. x
+4. x
+5. o
+6. x
+7. o
+8. x
+9. x
+10. 12312
+11. https://iphak.inje.ac.kr/contents/contents.asp?m=1&m2=1&m3=1
+12. https://iphak.inje.ac.kr/contents/contents.asp?m=2&m2=1&m3=1
 =>
