@@ -502,10 +502,9 @@
 			            else break;
 		            }
                 }
-                // fillTable()로 채우기
+                
                 fillTable();
-                // allCounter 수만큼 앞에서부터 자식 삭제하기
-                // a.removeChild(a.firstElementChild)를 allCounter 개수만큼 돌면 됨
+                
                 var iter,end;
                 end=allCounter;
                 for(iter=1;iter<end;iter++)
@@ -523,7 +522,62 @@
                 tagsSort=false;
                 studUpDown="UP";
 
+                var iter,end;
+                var now,dvs,tmp,left,right,wall;
+                end=allCounter;
+                clearHeap();
+                for(iter=1;iter<end;iter++) {    // 다 empty라서 비교해도 뒤로 안밀려남
+                    Heap[iter]=allCollege[iter];
+                    now=dvs=iter;
+                    dvs=parseInt(dvs/2);
 
+                    while(dvs!=0){
+                        if (Heap[now].students < Heap[dvs].students) {    // 아직 안정해져서 non으로 둠. 나중에 때에 맞춰 바꿔야함
+                            tmp=Heap[now];
+                            Heap[now]=Heap[dvs];
+                            Heap[dvs]=tmp;
+				            now = dvs;
+			            }
+			            dvs=parseInt(dvs/2);
+                    }
+                }
+                // 여기까지 위치 잡기
+                wall=end-1;
+                for(iter=1;iter<end;iter++, wall--){
+                    now=1;
+                    tmp=Heap[wall];
+                    Heap[wall]=Heap[now];
+                    Heap[now]=tmp;
+                    while (1) {
+			            if (now >= wall)break;
+
+			            left = now * 2;
+			            right = now * 2 + 1;
+			            if (right >= wall)right = 0;
+			            if (left >= wall)left = 0;
+
+			            if (Heap[left].students < Heap[right].students && Heap[left].students < Heap[now].students) {       //non
+                            tmp=Heap[left];
+                            Heap[left]=Heap[now];
+                            Heap[now]=tmp;
+			    	        now = left;
+			            }
+			            else if (Heap[left].students > Heap[right].students && Heap[right].students < Heap[now].students) {         //non
+                            tmp=Heap[right];
+                            Heap[right]=Heap[now];
+                            Heap[now]=tmp;
+				            now = right;
+			            }
+			            else break;
+		            }
+                }
+                
+                fillTable();
+
+                var iter,end;
+                end=allCounter;
+                for(iter=1;iter<end;iter++)
+                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
             }
         }
         function sortTags(){
@@ -537,7 +591,62 @@
                 studSort=false;
                 tagsUpDown="UP";
 
+                var iter,end;
+                var now,dvs,tmp,left,right,wall;
+                end=allCounter;
+                clearHeap();
+                for(iter=1;iter<end;iter++) {    // 다 empty라서 비교해도 뒤로 안밀려남
+                    Heap[iter]=allCollege[iter];
+                    now=dvs=iter;
+                    dvs=parseInt(dvs/2);
 
+                    while(dvs!=0){
+                        if (Heap[now].tags.length < Heap[dvs].tags.length) {    // 아직 안정해져서 non으로 둠. 나중에 때에 맞춰 바꿔야함
+                            tmp=Heap[now];
+                            Heap[now]=Heap[dvs];
+                            Heap[dvs]=tmp;
+				            now = dvs;
+			            }
+			            dvs=parseInt(dvs/2);
+                    }
+                }
+                // 여기까지 위치 잡기
+                wall=end-1;
+                for(iter=1;iter<end;iter++, wall--){
+                    now=1;
+                    tmp=Heap[wall];
+                    Heap[wall]=Heap[now];
+                    Heap[now]=tmp;
+                    while (1) {
+			            if (now >= wall)break;
+
+			            left = now * 2;
+			            right = now * 2 + 1;
+			            if (right >= wall)right = 0;
+			            if (left >= wall)left = 0;
+
+			            if (Heap[left].tags.length < Heap[right].tags.length && Heap[left].tags.length < Heap[now].tags.length) {       //non
+                            tmp=Heap[left];
+                            Heap[left]=Heap[now];
+                            Heap[now]=tmp;
+			    	        now = left;
+			            }
+			            else if (Heap[left].tags.length > Heap[right].tags.length && Heap[right].tags.length < Heap[now].tags.length) {         //non
+                            tmp=Heap[right];
+                            Heap[right]=Heap[now];
+                            Heap[now]=tmp;
+				            now = right;
+			            }
+			            else break;
+		            }
+                }
+                
+                fillTable();
+
+                var iter,end;
+                end=allCounter;
+                for(iter=1;iter<end;iter++)
+                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
             }
         }
         </script>
@@ -570,8 +679,8 @@
                     <tr>
                         <th id="Location">소재</th>
                         <th id="Name" onmousedown="sortName()">대학교 이름</th>
-                        <th id="Students">재학생 수</th>
-                        <th id="Tag">태그</th>
+                        <th id="Students" onmousedown="sortStud()">재학생 수</th>
+                        <th id="Tag" onmousedown="sortTags()">태그</th>
                         <th id="SuLink">수시 링크</th>
                         <th id="JungLink">정시 링크</th>
                     </tr>
