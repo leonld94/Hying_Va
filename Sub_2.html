@@ -461,20 +461,20 @@
         // gs_nRequest.onload = function (){
         //     gs_nFill(gs_nRequest.response);
         // }
-        // jl_bRequest=new XMLHttpRequest();
-        // jl_bRequest.open('Get',jl_bListURL);
-        // jl_bRequest.responseType='json';
-        // jl_bRequest.send();
-        // jl_bRequest.onload = function (){
-        //     jl_bFill(jl_bRequest.response);
-        // }
-        // jl_nRequest=new XMLHttpRequest();
-        // jl_nRequest.open('Get',jl_nListURL);
-        // jl_nRequest.responseType='json';
-        // jl_nRequest.send();
-        // jl_nRequest.onload = function (){
-        //     jl_nFill(jl_nRequest.response);
-        // }
+        jl_bRequest=new XMLHttpRequest();
+        jl_bRequest.open('Get',jl_bListURL);
+        jl_bRequest.responseType='json';
+        jl_bRequest.send();
+        jl_bRequest.onload = function (){
+            jl_bFill(jl_bRequest.response);
+        }
+        jl_nRequest=new XMLHttpRequest();
+        jl_nRequest.open('Get',jl_nListURL);
+        jl_nRequest.responseType='json';
+        jl_nRequest.send();
+        jl_nRequest.onload = function (){
+            jl_nFill(jl_nRequest.response);
+        }
         cc_bRequest=new XMLHttpRequest();
         cc_bRequest.open('Get',cc_bListURL);
         cc_bRequest.responseType='json';
