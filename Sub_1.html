@@ -66,10 +66,6 @@
         #muni{
             border-bottom: 1px solid lightgray;
         }
-        .upperSel{
-            display: flex;
-            justify-content: center;
-        }
         .selection{
             background-color: lightgray;
             border: 1px solid darkgray;
@@ -79,15 +75,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .lowerSel{
-            display: flex;
-            width: 186px;
-            height: 80px;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            background-color: lightgray;
         }
         .select{
             width: 90px;
@@ -251,6 +238,11 @@
             div[i].style.marginTop = `${(-count[i] % 2) * div[i].offsetHeight}px`
         }
 
+        const adjustDiv = th => {
+            const div = document.getElementsByName('localDiv')[1]
+            div[i].style.marginTop = `${(-count[i] % 2) * div[i].offsetHeight}px`
+        }
+
         var exCollege = new Array(50);
 
         var seoulCollege = new Array(32);   // 서울
@@ -264,7 +256,6 @@
         var cc_bCollege = new Array(5);    // 충청북도
         var cc_nCollege = new Array(10);    // 충청남도
         var allCollege = new Array(140);    // 전체 대학 총괄
-        console.log(allCollege);
         var Heap = new Array(140);          // 정렬용 배열
 
         var allCounter = 0;
@@ -593,7 +584,7 @@
             </form>
         </div>
         <div class="infor">
-            <a href="./undefined">도움말</a>
+                <a href="Sub_2.html">전형별 대학 사이트가기</a>
         </div>
     </header>
     <section>
@@ -613,18 +604,8 @@
                     충청남도 소재 대학교 <span class="red">9개</span>가 있습니다.
                 </div>
             </div>
-            <div class="input">
-                <div class="upperSel">
-                    <div class="selection" id="jeon">전형</div>
-                    <div class="selection" id="muni">문/이과</div>
-                    <div class="selection" id="hack">학과</div>
-                </div>
-                <div class="lowerSel">
-                    <div class="select">자연계</div>
-                    <div class="select">공학계</div>
-                    <div class="select">법학계</div>
-                    <div class="select">문학계</div>
-                </div>
+            <div>
+                
             </div>
         </div>
     </section>
@@ -697,7 +678,7 @@
     <hr>
     <footer>
         - 대표자명 : 이윤호<br>
-        - 주소 : undefined<br>
+        - 주소 : Colin P Kelly Junior Street, San Francisco<br>
         - 전화번호 : 010-4677-3492<br>
         - 이메일 : qwerty1076199@gmail.com<br>
         태그 중 [TOP 20]는 'https://www.languagecourse.net/ko/daehag--south-korea'를 기준으로 선정하였습니다.<br>
