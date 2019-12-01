@@ -464,7 +464,7 @@
         gwRequest.onload = function (){
             gwFill(gwRequest.response);
             gwOK = true;
-            fillTable();    // 맨 마지막 수신에서 호출해야함
+            fillCheck();
         }
         gs_bRequest=new XMLHttpRequest();
         gs_bRequest.open('Get',gs_bListURL);
