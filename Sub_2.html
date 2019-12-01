@@ -253,79 +253,7 @@
         var arrows = document.getElementsByClassName('sortArrow');
         var statusArrows = [-1, -1, -1];
 
-        function seoulFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function metroFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function ggFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function gwFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function gs_bFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function gs_nFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function jl_bFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function jl_nFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function cc_bFill(json){
-            var i, end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function cc_nFill(json){
+        function localFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
@@ -406,7 +334,7 @@
         seoulRequest.responseType='json';
         seoulRequest.send();
         seoulRequest.onload = function (){
-            seoulFill(seoulRequest.response);
+            localFill(seoulRequest.response);
             seoulOK = true;
             fillCheck();
         }
@@ -415,7 +343,7 @@
         metroRequest.responseType='json';
         metroRequest.send();
         metroRequest.onload = function (){
-            metroFill(metroRequest.response);
+            localFill(metroRequest.response);
             metroOK = true;
             fillCheck();
         }
@@ -424,7 +352,7 @@
         ggRequest.responseType='json';
         ggRequest.send();
         ggRequest.onload = function (){
-            ggFill(ggRequest.response);
+            localFill(ggRequest.response);
             ggOK = true;
             fillCheck();
         }
@@ -433,7 +361,7 @@
         gwRequest.responseType='json';
         gwRequest.send();
         gwRequest.onload = function (){
-            gwFill(gwRequest.response);
+            localFill(gwRequest.response);
             gwOK = true;
             fillCheck();
             
@@ -443,7 +371,7 @@
         gs_bRequest.responseType='json';
         gs_bRequest.send();
         gs_bRequest.onload = function (){
-            gs_bFill(gs_bRequest.response);
+            localFill(gs_bRequest.response);
             gs_bOK = true;
             fillCheck();
         }
@@ -452,7 +380,7 @@
         gs_nRequest.responseType='json';
         gs_nRequest.send();
         gs_nRequest.onload = function (){
-            gs_nFill(gs_nRequest.response);
+            localFill(gs_nRequest.response);
             gs_nOK = true;
             fillCheck();
         }
@@ -461,7 +389,7 @@
         jl_bRequest.responseType='json';
         jl_bRequest.send();
         jl_bRequest.onload = function (){
-            jl_bFill(jl_bRequest.response);
+            localFill(jl_bRequest.response);
             jl_bOK = true;
             fillCheck();
         }
@@ -470,7 +398,7 @@
         jl_nRequest.responseType='json';
         jl_nRequest.send();
         jl_nRequest.onload = function (){
-            jl_nFill(jl_nRequest.response);
+            localFill(jl_nRequest.response);
             jl_nOK = true;
             fillCheck();
         }
@@ -479,7 +407,7 @@
         cc_bRequest.responseType='json';
         cc_bRequest.send();
         cc_bRequest.onload = function (){
-            cc_bFill(cc_bRequest.response);
+            localFill(cc_bRequest.response);
             cc_bOK = true;
             fillCheck();
         }
@@ -488,7 +416,7 @@
         cc_nRequest.responseType='json';
         cc_nRequest.send();
         cc_nRequest.onload = function (){
-            cc_nFill(cc_nRequest.response);
+            localFill(cc_nRequest.response);
             cc_nOK = true;
             fillCheck();
         }
