@@ -565,6 +565,14 @@
         //서치 함수
         function searchUniv(){
             searchIndex = 0;
+            nameSort = false;
+            studSort = false;
+            tagsSort = false;
+            nameUp = false;
+            studUp = false;
+            tagsUp = false;
+            
+
             var searchBar = document.getElementById('search');
             for(var i = 1; i < allCounter; i++){
                 if(allCollege[i].college_name.indexOf(searchBar.value) != -1){
@@ -575,7 +583,7 @@
             var tbody=document.getElementsByTagName("tbody")[0];
             var iter,end;
             end = tbody.childElementCount;
-            for(iter=0;iter<end;iter++){
+            for(iter=1;iter<=end;iter++){
                 tbody.removeChild(tbody.firstElementChild);
             }
 
@@ -639,29 +647,28 @@
         function sortName(){          // name의 경우만 특별하게 앞뒤를 뒤집어줘야함
             if(nameSort == true)    // 뒤집으면 됨
             {   
-                if(nameUp) {
+                if(nameUp)
                     nameUp=false;
-
-                }
-                else {
-                    namUp=true;
-                }
+                else
+                    nameUp=true;
                 //여기에서 화살표 돌리기
-               rotateArrow('Name');
+                rotateArrow('Name');
 
                 var iter,end;
+                var tbody=document.getElementsByTagName("tbody")[0];
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
                     tmp=Heap[iter];
                     Heap[iter]=Heap[allCounter-iter];
                     Heap[allCounter-iter]=tmp;
                 }
-                fillTable();
 
                 var iter,end;
-                end=allCounter;
-                for(iter=1;iter<end;iter++)
-                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
+                end=tbody.childElementCount;
+                for(iter=1;iter<=end;iter++)
+                    tbody.removeChild(tbody.firstElementChild);
+                    
+                fillTable();
             }
             else 
             {     
@@ -676,6 +683,7 @@
                 // 정렬
                 var iter,end;
                 var now,dvs,tmp,left,right,wall;
+                var tbody=document.getElementsByTagName("tbody")[0];
                 end=allCounter;
                 clearHeap();
                 for(iter=1;iter<end;iter++) {    // 다 empty라서 비교해도 뒤로 안밀려남
@@ -727,42 +735,39 @@
                     tmp=Heap[iter];
                     Heap[iter]=Heap[allCounter-iter];
                     Heap[allCounter-iter]=tmp;
-                }
-                fillTable();
+                }                
                 
                 var iter,end;
-                end=allCounter;
-                for(iter=1;iter<end;iter++)
-                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
+                end=tbody.childElementCount;
+                for(iter=1;iter<=end;iter++)
+                    tbody.removeChild(tbody.firstElementChild);
+                    
+                fillTable();
             }
         }
         function sortStud(){
-           
-
             if(studSort == true) // 뒤집기
             {
-                if(studUp){
+                if(studUp)
                     studUp=false;
-
-                }
-                else {
+                else 
                     studUp=true;
-
-                }
                 rotateArrow('Students');
                 var iter,end;
+                var tbody=document.getElementsByTagName("tbody")[0];
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
                     tmp=Heap[iter];
                     Heap[iter]=Heap[allCounter-iter];
                     Heap[allCounter-iter]=tmp;
                 }
-                fillTable();
 
                 var iter,end;
-                end=allCounter;
-                for(iter=1;iter<end;iter++)
-                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
+                end=tbody.childElementCount;
+                for(iter=1;iter<=end;iter++)
+                    tbody.removeChild(tbody.firstElementChild);
+                    
+                fillTable();
             }
             else 
             {                    // 정렬
@@ -776,6 +781,7 @@
 
                 var iter,end;
                 var now,dvs,tmp,left,right,wall;
+                var tbody=document.getElementsByTagName("tbody")[0];
                 end=allCounter;
                 clearHeap();
                 for(iter=1;iter<end;iter++) {    // 다 empty라서 비교해도 뒤로 안밀려남
@@ -824,40 +830,38 @@
 		            }
                 }
                 
-                fillTable();
-
                 var iter,end;
-                end=allCounter;
-                for(iter=1;iter<end;iter++)
-                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
-            }
+                end=tbody.childElementCount;
+                for(iter=1;iter<=end;iter++)
+                    tbody.removeChild(tbody.firstElementChild);
+                    
+                fillTable();
+                }
         }
         function sortTags(){
             if(tagsSort == true) // 뒤집기
             {   
-                if(tagsUp){
+                if(tagsUp)
                     tagsUp=false;
-
-                }
-                else{
+                else
                     tagsUp=true;
-
-                }
                 rotateArrow('Tag');
                 var iter,end;
+                var tbody=document.getElementsByTagName("tbody")[0];
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
                     tmp=Heap[iter];
                     Heap[iter]=Heap[allCounter-iter];
                     Heap[allCounter-iter]=tmp;
                 }
-                fillTable();
 
                 var iter,end;
-                end=allCounter;
-                for(iter=1;iter<end;iter++)
-                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
-            }
+                end=tbody.childElementCount;
+                for(iter=1;iter<=end;iter++)
+                    tbody.removeChild(tbody.firstElementChild);
+                    
+                fillTable();
+                }
             else 
             {                    // 정렬
                 rotateArrow('Tag');
@@ -870,6 +874,7 @@
 
                 var iter,end;
                 var now,dvs,tmp,left,right,wall;
+                var tbody=document.getElementsByTagName("tbody")[0];
                 end=allCounter;
                 clearHeap();
                 for(iter=1;iter<end;iter++) {    // 다 empty라서 비교해도 뒤로 안밀려남
@@ -918,13 +923,13 @@
 		            }
                 }
                 
-                fillTable();
-
                 var iter,end;
-                end=allCounter;
-                for(iter=1;iter<end;iter++)
-                    document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
-            }
+                end=tbody.childElementCount;
+                for(iter=1;iter<=end;iter++)
+                    tbody.removeChild(tbody.firstElementChild);
+                    
+                fillTable();
+                }
         }
         </script>
 </head>
