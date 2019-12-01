@@ -536,6 +536,12 @@
                 ]
             }
         }
+        function initArrow(){
+            for(var i = 0; i < arrows.length; i++){
+                statusArrows[i] = -1;  
+                arrows[i].src = "triangleDesign/triangle90.png"
+            }
+        }
         //화살표 돌리는 함수
         function rotateArrow(ID){
             var source = null;
@@ -572,6 +578,7 @@
             studUp = false;
             tagsUp = false;
             
+            initArrow();
 
             var searchBar = document.getElementById('search');
             for(var i = 1; i < allCounter; i++){
