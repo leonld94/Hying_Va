@@ -188,18 +188,6 @@
             background-color: #CCCCCC;
             font-weight: bold;
         }
-        footer{
-            font-size: 12px;
-            background-color: #555555;
-            color: #FFFFFF;
-            display: block;
-            position: relative;
-            margin: 0px;
-            margin-top: 20px;
-            text-align: center;
-            bottom: 0;
-            height: 113px;
-        }
     </style>
     <script>
         var seoulCollege = new Array(32);   // 서울
@@ -213,7 +201,6 @@
         var cc_bCollege = new Array(50);    // 충청북도
         var cc_nCollege = new Array(50);    // 충청남도
         var allCollege = new Array(140);    // 전체 대학 총괄
-
         var Heap = new Array(140);          // 정렬용 배열
 
         var nameSort = false;
@@ -222,6 +209,17 @@
         var nameUp = false;
         var studUp = false;
         var tagsUp = false;
+
+        var seoulOK = false;
+        var metroOK = false;
+        var ggOK = false;
+        var gwOK = false;
+        var gs_bOK = false;
+        var gs_nOK = false;
+        var jl_bOK = false;
+        var jl_nOK = false;
+        var cc_bOK = false;
+        var cc_nOK = false; 
         
         var seoulOK = false;
         var metroOK = false;
@@ -236,7 +234,7 @@
 
 
         var allCounter = 1;
-
+      
         var seoulRequest;
         var metroRequest;
         var ggRequest;
@@ -288,6 +286,11 @@
                 metroCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
+            }
+        }
+        function fillCheck(){
+            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
+                fillTable();
             }
         }
         function ggFill(json){
@@ -424,13 +427,11 @@
                 tbody.appendChild(newchild);
             }
         }
-
         function fillCheck(){
             if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
                 fillTable();
             }
         }
-
 
         seoulRequest=new XMLHttpRequest();
         seoulRequest.open('Get',seoulListURL);
