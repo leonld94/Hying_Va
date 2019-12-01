@@ -120,7 +120,7 @@
             display: flex;
             justify-content: space-between;
             position: relative;
-            left: 10%;
+            left: 7%;
             top: 20px;
             align-items: center;
         }
@@ -215,6 +215,7 @@
         var cc_nCollege = new Array(10);    // 충청남도
         var allCollege = new Array(140);    // 전체 대학 총괄
         var Heap = new Array(140);          // 정렬용 배열
+        var search_College = new Array(140);// 검색용 배열
 
         var nameSort = false;
         var studSort = false;
@@ -236,6 +237,8 @@
         
 
         var allCounter = 1;
+
+        var searchIndex = 0;
 
         var seoulRequest;
         var metroRequest;
@@ -562,7 +565,14 @@
         }
         //서치 함수
         function searchUniv(){
-            
+            searchIndex = 0;
+            var searchBar = document.getElementById('search');
+            for(var i = 1; i < allCounter; i++){
+                if(allCollege[i].college_name.indexOf(searchBar.value) != -1){
+                    search_College[searchIndex++];
+                    console.log(allCollege[i].college_name);
+                }
+            }
         }
 
         function sortName(){          // name의 경우만 특별하게 앞뒤를 뒤집어줘야함
@@ -872,7 +882,7 @@
             <div class="input">
                 <form>
                     <input type="search" id="search" placeholder="어느 대학교?" required>
-                    <input type="submit" id="submit" value="검색">
+                    <input type="submit" id="submit" onclick="searchUniv()" value="검색">
                 </form>
             </div>
         </div>
