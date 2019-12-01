@@ -514,8 +514,7 @@
         cc_nRequest.onload = function (){
             cc_nFill(cc_nRequest.response);
             cc_nOK = true;
-            
-            fillTable();    // 맨 마지막 수신에서 호출해야함
+            fillCheck();
         }
 
         function clearHeap(){   // Heap 좀 지워줘요. 이거 하고나면 다 empty 되니까 비교할때 에러 안나서 좋음
@@ -569,9 +568,71 @@
             var searchBar = document.getElementById('search');
             for(var i = 1; i < allCounter; i++){
                 if(allCollege[i].college_name.indexOf(searchBar.value) != -1){
-                    search_College[searchIndex++];
-                    console.log(allCollege[i].college_name);
+                    search_College[searchIndex++] = allCollege[i];
                 }
+            }
+
+            var tbody=document.getElementsByTagName("tbody")[0];
+            var iter,end;
+            end = tbody.childElementCount;
+            for(iter=0;iter<end;iter++){
+                tbody.removeChild(tbody.firstElementChild);
+            }
+
+            end=searchIndex;
+    
+            for(iter=0;iter<end;iter++){
+                var newchild=document.createElement("tr");
+                
+                var loc=document.createElement("td");
+                loc.setAttribute("class","loc");
+                loc.innerHTML=search_College[iter].location;
+                newchild.appendChild(loc);
+
+                var name=document.createElement("td");
+                name.innerHTML=search_College[iter].college_name;
+                newchild.appendChild(name);
+
+                var stu=document.createElement("td");
+                stu.innerHTML=search_College[iter].students+"명";
+                newchild.appendChild(stu);
+
+                var tag=document.createElement("td");
+                var div=document.createElement("div");
+                div.setAttribute("class","tag");
+                fnd=search_College[iter].tags.length;
+                for(jter=0;jter<fnd;jter++){
+                    var spans=document.createElement("span");
+                    if(search_College[iter].tags[jter] == "지방") spans.setAttribute("class","Prov Tags");
+                    else if(search_College[iter].tags[jter] == "특성화고 전형") spans.setAttribute("class","Spec Tags");
+                    else if(search_College[iter].tags[jter] == "자유전공") spans.setAttribute("class","Free Tags");
+                    else if(search_College[iter].tags[jter] == "여대") spans.setAttribute("class","Girl Tags");
+                    else if(search_College[iter].tags[jter] == "기숙사") spans.setAttribute("class","Dorm Tags");
+                    else if(search_College[iter].tags[jter] == "TOP 20") spans.setAttribute("class","TopT Tags");
+                    else if(search_College[iter].tags[jter] == "컴퓨터 공학과") spans.setAttribute("class","Comp Tags");
+                    else if(search_College[iter].tags[jter] == "거점대학교") spans.setAttribute("class","SHld Tags");
+                    else if(search_College[iter].tags[jter] == "과학기술원") spans.setAttribute("class","Scie Tags");
+                    spans.innerHTML=search_College[iter].tags[jter];
+                    div.appendChild(spans);
+                }
+                tag.appendChild(div);
+                newchild.appendChild(tag);
+
+                var early=document.createElement("td");
+                if(search_College[iter].early_link == "")
+                    early.innerHTML="-";
+                else
+                    early.innerHTML="<a href='"+search_College[iter].early_link+"' target='_blank'>링크</a>";
+                newchild.appendChild(early);
+
+                var regular=document.createElement("td");
+                if(search_College[iter].regular_link == "")
+                    regular.innerHTML="-";
+                else
+                    regular.innerHTML="<a href='"+search_College[iter].regular_link+"' target='_blank'>링크</a>";
+                newchild.appendChild(regular);
+
+                tbody.appendChild(newchild);
             }
         }
 
