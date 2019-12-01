@@ -84,12 +84,13 @@
             width: 10%;
             background-color: #AAAAAA;
         }
+        
         #Name{
             width: 15%;
             background-color: #DDDDDD;
         }
         #Students{
-            width: 10%;
+            width: 15%;
             background-color: #DDDDDD;
         }
         
@@ -192,12 +193,12 @@
             font-size: 12px;
             background-color: #555555;
             color: #FFFFFF;
-            display: block;
             position: relative;
             margin: 0px;
-            margin-top: 20px;
+            bottom: 0px;
+            width: 100%;
             text-align: center;
-            bottom: 0;
+            margin-top: 20px;
             height: 113px;
         }
     </style>
@@ -259,18 +260,9 @@
         var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        //
 
         var arrows = document.getElementsByClassName('sortArrow');
-        var statusArrows = [0, 0, 0];
+        var statusArrows = [-1, -1, -1];
         var clickedIndex = null;
 
-        function exFill(json){
-            var i,end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                exCollege[i]=json.universities[i-1];
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
         function seoulFill(json){
             var i, end;
             end=json.universities.length;
@@ -287,6 +279,11 @@
                 metroCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
+            }
+        }
+        function fillCheck(){
+            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
+                fillTable();
             }
         }
         function ggFill(json){
@@ -424,11 +421,6 @@
             }
         }
 
-        function fillCheck(){
-            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
-                fillTable();
-            }
-        }
 
         seoulRequest=new XMLHttpRequest();
         seoulRequest.open('Get',seoulListURL);
@@ -464,7 +456,7 @@
         gwRequest.onload = function (){
             gwFill(gwRequest.response);
             gwOK = true;
-            fillCheck();
+            fillTable();    // 맨 마지막 수신에서 호출해야함
         }
         gs_bRequest=new XMLHttpRequest();
         gs_bRequest.open('Get',gs_bListURL);
@@ -483,14 +475,13 @@
             gs_nFill(gs_nRequest.response);
             gs_nOK = true;
         }
-
         jl_bRequest=new XMLHttpRequest();
         jl_bRequest.open('Get',jl_bListURL);
         jl_bRequest.responseType='json';
         jl_bRequest.send();
         jl_bRequest.onload = function (){
             jl_bFill(jl_bRequest.response);
-            jl_bOK = true;
+            jlbOK = true;
             fillCheck();
         }
         jl_nRequest=new XMLHttpRequest();
@@ -499,7 +490,7 @@
         jl_nRequest.send();
         jl_nRequest.onload = function (){
             jl_nFill(jl_nRequest.response);
-            jl_nOK = true;
+            jl_OK = true;
             fillCheck();
         }
         cc_bRequest=new XMLHttpRequest();
@@ -541,10 +532,30 @@
             }
         }
         //화살표 돌리는 함수
-        function rotateArrow(th){
-            statusArrows[i] = (statusArrows[i] + 2) % 3;
-            console.log(statusArrows[i]);
-            arrows[i].cssText = `display: flex; transition: 1s; transform: rotate(${statusArrows[i] * 90})deg;`;    
+        function rotateArrow(ID){
+            var source = null;
+            for(var i = 0; i < arrows.length; i++){
+                if(arrows[i].parentElement.id == ID)
+                {
+                    if(statusArrows[i] == -1)
+                        statusArrows[i] = 0;
+                    console.log(statusArrows[i]);
+                    statusArrows[i] = (statusArrows[i] + 1) % 2;
+                    switch(statusArrows[i]){
+                        case 0:
+                            source = "triangleDesign/triangle180.png";
+                            break;
+                        case 1:
+                            source = "triangleDesign/triangle.png";
+                            break;
+                        
+                    }
+                    arrows[i].src = source;
+                }else{
+                    statusArrows[i] = -1;  
+                    arrows[i].src = "triangleDesign/triangle90.png"
+                }
+            }
         }
 
         function sortName(){          // name의 경우만 특별하게 앞뒤를 뒤집어줘야함
@@ -559,15 +570,7 @@
 
                 }
                 //여기에서 화살표 돌리기
-                for(var i = 0; i < arrows.length; i++){
-                    if(arrows[i].parentElement.id == 'Name'){
-                        statusArrows[i] = (statusArrows[i] + 2) % 3;
-                        console.log(statusArrows[i]);
-                        arrows[i].cssText = `display: flex; transition: 1s; transform: rotate(${statusArrows[i] * 90})deg;`;
-                        continue;
-                    }
-                    statusArrows[i] = 0;
-                }
+               rotateArrow('Name');
 
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
@@ -584,7 +587,9 @@
                     document.getElementsByTagName("tbody")[0].removeChild(document.getElementsByTagName("tbody")[0].firstElementChild);
             }
             else 
-            {                       // 정렬하면 됨
+            {     
+                rotateArrow('Name');
+                                  // 정렬하면 됨
                 studSort=false;
                 tagsSort=false;
                 nameSort=true;
@@ -655,6 +660,8 @@
             }
         }
         function sortStud(){
+           
+
             if(studSort == true) // 뒤집기
             {
                 if(studUp){
@@ -665,7 +672,7 @@
                     studUp=true;
 
                 }
-                
+                rotateArrow('Students');
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
@@ -682,6 +689,7 @@
             }
             else 
             {                    // 정렬
+                rotateArrow('Students');
                 nameSort=false;
                 tagsSort=false;
                 studSort=true;
@@ -758,7 +766,7 @@
                     tagsUp=true;
 
                 }
-
+                rotateArrow('Tag');
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
@@ -775,6 +783,7 @@
             }
             else 
             {                    // 정렬
+                rotateArrow('Tag');
                 nameSort=false;
                 studSort=false;
                 tagsSort=true;
@@ -865,12 +874,13 @@
     <section id="localCol">
         <div class="colBody">
             <table class="college">
+                <!-- var Famous = undefined -->
                 <thead>
                     <tr>
                         <th id="Location">소재</th>
-                        <th id="Name" onmousedown="sortName()" class="tableHead">대학교 이름 <img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
-                        <th id="Students" onmousedown="sortStud()" class="tableHead">재학생 수<img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
-                        <th id="Tag" onmousedown="sortTags()" class="tableHead">태그<img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
+                        <th id="Name" onclick="sortName()" class="tableHead"><span>대학교 이름</span><img src="triangleDesign/triangle90.png" alt="화살표" class="sortArrow"></th>
+                        <th id="Students" onclick="sortStud()" class="tableHead"><span>재학생 수</span><img src="triangleDesign/triangle90.png" alt="화살표" class="sortArrow"></th>
+                        <th id="Tag" onclick="sortTags()" class="tableHead"><span>태그</span><img src="triangleDesign/triangle90.png" alt="화살표" class="sortArrow"></th>
                         <th id="SuLink">수시 링크</th>
                         <th id="JungLink">정시 링크</th>
                     </tr>
@@ -881,13 +891,13 @@
         </div>
     </section>
     <footer>
-            <br>
-            - 대표자명 : 이윤호<br>
-            - 주소 : undefined<br>
-            - 전화번호 : 010-4677-3492<br>
-            - 이메일 : qwerty1076199@gmail.com<br>
-            태그 중 [TOP 20]는 'https://www.languagecourse.net/ko/daehag--south-korea'를 기준으로 선정하였습니다.<br>
-            재학생 수는 동일 시기가 아닐 수 있습니다.
-        </footer>
+        <br>
+        - 대표자명 : 이윤호<br>
+        - 주소 : undefined<br>
+        - 전화번호 : 010-4677-3492<br>
+        - 이메일 : qwerty1076199@gmail.com<br>
+        태그 중 [TOP 20]는 'https://www.languagecourse.net/ko/daehag--south-korea'를 기준으로 선정하였습니다.<br>
+        재학생 수는 동일 시기가 아닐 수 있습니다.
+    </footer>
 </body>
 </html>
