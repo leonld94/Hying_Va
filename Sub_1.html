@@ -230,7 +230,6 @@
 
         const hidDiv = th => {
             const div = document.getElementsByName('localDiv')
-            const footer = document.getElementsByTagName('footer')[0];
             i = (th.id == 'selArrow') ? 0 : 1;
             count[i]++
             th.style.cssText = `display: flex; transition: 0.5s; transform: rotate(${count[i] * 180}deg);`
