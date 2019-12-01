@@ -242,20 +242,16 @@
             div[i].style.marginTop = `${(-count[i] % 2) * 100}%`
         }
 
-
-
-        var exCollege = new Array(50);
-
         var seoulCollege = new Array(32);   // 서울
-        var metroCollege = new Array(24);   // 광역시
+        var metroCollege = new Array(23);   // 광역시
         var ggCollege = new Array(15);      // 경기도
-        var gwCollege = new Array(50);      // 강원도
-        var gs_bCollege = new Array(50);    // 경상북도
-        var gs_nCollege = new Array(50);    // 경상남도
-        var jl_bCollege = new Array(50);    // 전라북도
-        var jl_nCollege = new Array(50);    // 전라남도
-        var cc_bCollege = new Array(50);    // 충청북도
-        var cc_nCollege = new Array(50);    // 충청남도
+        var gwCollege = new Array(4);      // 강원도
+        var gs_bCollege = new Array(6);    // 경상북도
+        var gs_nCollege = new Array(7);    // 경상남도
+        var jl_bCollege = new Array(5);    // 전라북도
+        var jl_nCollege = new Array(3);    // 전라남도
+        var cc_bCollege = new Array(5);    // 충청북도
+        var cc_nCollege = new Array(10);    // 충청남도
         var allCollege = new Array(140);    // 전체 대학 총괄
 
         var Heap = new Array(140);          // 정렬용 배열
@@ -273,9 +269,6 @@
         var cc_bOK = false;
         var cc_nOK = false; 
 
-
-        var exRequest;
-        var exListURL="https://leonld94.github.io/University_File/Example_Universities.json"
 
         var seoulRequest;
         var metroRequest;
@@ -300,15 +293,6 @@
         var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        //
 
 
-        function exFill(json){
-            var i,end;
-            end=json.universities.length;
-            for(i=0;i<end;i++,allCounter++){
-                exCollege[i]=json.universities[i];
-                allCollege[allCounter]=json.universities[i];
-                Heap[allCounter]=json.universities[i];
-            }
-        }  
         function seoulFill(json){
             var i, end;
             end=json.universities.length;
@@ -403,7 +387,6 @@
         function fillTable(){                   // 일단 모든 대학 나오게만 하고, 나중에 뭐든지 해
             var tbody=document.getElementsByTagName("tbody")[0];
             var iter, end;
-            var jter, fnd;
 
             end=allCounter;
     
@@ -532,6 +515,46 @@
             cc_nOK = true;
             fillCheck();
         }
+
+        function fillIt(arr){
+            var tbody=document.getElementsByTagName("tbody")[0];
+            var iter,end;
+            end = tbody.childElementCount;
+            for(iter=0;iter<end;iter++){
+                tbody.removeChild(tbody.firstElementChild);
+            }
+
+            end=arr.length-1;
+    
+            for(iter=0;iter<end;iter++){
+                var newchild=document.createElement("tr");
+                
+                var loc=document.createElement("td");
+                loc.setAttribute("class","place");
+                loc.innerHTML=arr[iter].location;
+                newchild.appendChild(loc);
+
+                var name=document.createElement("td");
+                name.innerHTML=arr[iter].college_name;
+                newchild.appendChild(name);
+
+                var early=document.createElement("td");
+                if(arr[iter].early_link == "")
+                    early.innerHTML="-";
+                else
+                    early.innerHTML="<a href='"+arr[iter].early_link+"' target='_blank'>링크</a>";
+                newchild.appendChild(early);
+
+                var regular=document.createElement("td");
+                if(arr[iter].regular_link == "")
+                    regular.innerHTML="-";
+                else
+                    regular.innerHTML="<a href='"+arr[iter].regular_link+"' target='_blank'>링크</a>";
+                newchild.appendChild(regular);
+
+                tbody.appendChild(newchild);
+            }
+        }
     </script>
 </head>
 <body>
@@ -554,9 +577,16 @@
             <div class="text">
                 <div class="write">
                     현재 저희 사이트는,<br>
-                    서울 소재 대학교 <span class="red">NaN개</span>,
-                    경기도 소재 대학교 <span class="red">NaN개</span>,
-                    충청도 ...
+                    서울 소재 대학교 <span class="red">31개</span>,
+                    광역시 소재 대학교 <span class="red">22개</span>,
+                    경기도 소재 대학교 <span class="red">14개</span>,
+                    강원도 소재 대학교 <span class="red">3개</span>,
+                    경상북도 소재 대학교 <span class="red">5개</span>,
+                    경상남도 소재 대학교 <span class="red">6개</span>,
+                    전라북도 소재 대학교 <span class="red">4개</span>,
+                    전라남도 소재 대학교 <span class="red">2개</span>,
+                    충청북도 소재 대학교 <span class="red">4개</span>,
+                    충청남도 소재 대학교 <span class="red">9개</span>가 있습니다.
                 </div>
             </div>
             <div class="input">
@@ -583,34 +613,34 @@
         </div>
         <div class="bodyBox">
             <div class="localBody" name="localDiv">
-                <div class="photo">
+                <div class="photo" onclick="fillIt(seoulCollege)">
                     <img src="./Local_Image/11_서울.png" alt="Seoul">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(metroCollege)">
                     <img src="./Local_Image/12_광역시.png" alt="KwangYoekSi">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(ggCollege)">
                     <img src="./Local_Image/13_경기도.png" alt="KeongGi">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(gwCollege)">
                     <img src="./Local_Image/14_강원도.png" alt="KangWon">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(gs_bCollege)">
                     <img src="./Local_Image/15_1_경상북도.png" alt="GeongBuk">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(gs_nCollege)">
                     <img src="./Local_Image/15_2_경상남도.png" alt="GeongNam">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(jl_bCollege)">
                     <img src="./Local_Image/16_1_전라북도.png" alt="JeonBuk">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(jl_nCollege)">
                     <img src="./Local_Image/16_2_전라남도.png" alt="JeonNam">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(cc_bCollege)">
                     <img src="./Local_Image/17_1_충청북도.png" alt="ChungBuk">
                 </div>
-                <div class="photo">
+                <div class="photo" onclick="fillIt(cc_nCollege)">
                     <img src="./Local_Image/17_2_충청남도.png" alt="ChungNam">
                 </div>
                 <!-- MaxCount = 6 -->
@@ -636,7 +666,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                     </tbody>
                 </table>
             </div>
