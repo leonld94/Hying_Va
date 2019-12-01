@@ -289,11 +289,6 @@
                 Heap[allCounter]=json.universities[i-1];
             }
         }
-        function fillCheck(){
-            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
-                fillTable();
-            }
-        }
         function ggFill(json){
             var i, end;
             end=json.universities.length;
@@ -429,6 +424,11 @@
             }
         }
 
+        function fillCheck(){
+            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
+                fillTable();
+            }
+        }
 
         seoulRequest=new XMLHttpRequest();
         seoulRequest.open('Get',seoulListURL);
@@ -490,7 +490,7 @@
         jl_bRequest.send();
         jl_bRequest.onload = function (){
             jl_bFill(jl_bRequest.response);
-            jlbOK = true;
+            jl_bOK = true;
             fillCheck();
         }
         jl_nRequest=new XMLHttpRequest();
@@ -499,7 +499,7 @@
         jl_nRequest.send();
         jl_nRequest.onload = function (){
             jl_nFill(jl_nRequest.response);
-            jl_OK = true;
+            jl_nOK = true;
             fillCheck();
         }
         cc_bRequest=new XMLHttpRequest();
@@ -865,7 +865,6 @@
     <section id="localCol">
         <div class="colBody">
             <table class="college">
-                <!-- var Famous = undefined -->
                 <thead>
                     <tr>
                         <th id="Location">소재</th>
