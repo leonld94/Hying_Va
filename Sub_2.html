@@ -456,7 +456,8 @@
         gwRequest.onload = function (){
             gwFill(gwRequest.response);
             gwOK = true;
-            fillTable();    // 맨 마지막 수신에서 호출해야함
+            fillCheck();
+            
         }
         gs_bRequest=new XMLHttpRequest();
         gs_bRequest.open('Get',gs_bListURL);
@@ -474,6 +475,7 @@
         gs_nRequest.onload = function (){
             gs_nFill(gs_nRequest.response);
             gs_nOK = true;
+            fillCheck();
         }
         jl_bRequest=new XMLHttpRequest();
         jl_bRequest.open('Get',jl_bListURL);
@@ -481,7 +483,7 @@
         jl_bRequest.send();
         jl_bRequest.onload = function (){
             jl_bFill(jl_bRequest.response);
-            jlbOK = true;
+            jl_bOK = true;
             fillCheck();
         }
         jl_nRequest=new XMLHttpRequest();
@@ -490,7 +492,7 @@
         jl_nRequest.send();
         jl_nRequest.onload = function (){
             jl_nFill(jl_nRequest.response);
-            jl_OK = true;
+            jl_nOK = true;
             fillCheck();
         }
         cc_bRequest=new XMLHttpRequest();
@@ -509,7 +511,8 @@
         cc_nRequest.onload = function (){
             cc_nFill(cc_nRequest.response);
             cc_nOK = true;
-            fillCheck();
+            
+            fillTable();    // 맨 마지막 수신에서 호출해야함
         }
 
         function clearHeap(){   // Heap 좀 지워줘요. 이거 하고나면 다 empty 되니까 비교할때 에러 안나서 좋음
@@ -556,6 +559,10 @@
                     arrows[i].src = "triangleDesign/triangle90.png"
                 }
             }
+        }
+        //서치 함수
+        function searchUniv(){
+            
         }
 
         function sortName(){          // name의 경우만 특별하게 앞뒤를 뒤집어줘야함
