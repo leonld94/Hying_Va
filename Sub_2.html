@@ -251,15 +251,6 @@
         var statusArrows = [0, 0, 0];
 
 
-        function exFill(json){
-            var i,end;
-            end=json.universities.length;
-            for(i=1;i<=end;i++,allCounter++){
-                exCollege[i]=json.universities[i-1];
-                allCollege[allCounter]=json.universities[i-1];
-                Heap[allCounter]=json.universities[i-1];
-            }
-        }
         function seoulFill(json){
             var i, end;
             end=json.universities.length;
