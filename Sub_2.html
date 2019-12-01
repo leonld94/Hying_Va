@@ -202,18 +202,16 @@
         }
     </style>
     <script>
-        var exCollege = new Array(50);
-
         var seoulCollege = new Array(32);   // 서울
-        var metroCollege = new Array(23);   // 광역시
+        var metroCollege = new Array(24);   // 광역시
         var ggCollege = new Array(15);      // 경기도
-        var gwCollege = new Array(4);      // 강원도
-        var gs_bCollege = new Array(6);    // 경상북도
-        var gs_nCollege = new Array(7);    // 경상남도
-        var jl_bCollege = new Array(5);    // 전라북도
-        var jl_nCollege = new Array(3);    // 전라남도
-        var cc_bCollege = new Array(5);    // 충청북도
-        var cc_nCollege = new Array(10);    // 충청남도
+        var gwCollege = new Array(50);      // 강원도
+        var gs_bCollege = new Array(50);    // 경상북도
+        var gs_nCollege = new Array(50);    // 경상남도
+        var jl_bCollege = new Array(50);    // 전라북도
+        var jl_nCollege = new Array(50);    // 전라남도
+        var cc_bCollege = new Array(50);    // 충청북도
+        var cc_nCollege = new Array(50);    // 충청남도
         var allCollege = new Array(140);    // 전체 대학 총괄
 
         var Heap = new Array(140);          // 정렬용 배열
@@ -225,11 +223,19 @@
         var studUp = false;
         var tagsUp = false;
         
+        var seoulOK = false;
+        var metroOK = false;
+        var ggOK = false;
+        var gwOK = false;
+        var gs_bOK = false;
+        var gs_nOK = false;
+        var jl_bOK = false;
+        var jl_nOK = false;
+        var cc_bOK = false;
+        var cc_nOK = false; 
+
 
         var allCounter = 1;
-
-        var exRequest;
-        var exListURL="https://leonld94.github.io/University_File/Example_Universities.json"
 
         var seoulRequest;
         var metroRequest;
@@ -250,12 +256,12 @@
         var gs_nListURL="https://leonld94.github.io/University_File/GS_N_Universities.json";        //
         var jl_bListURL="https://leonld94.github.io/University_File/JL_B_Universities.json";        //
         var jl_nListURL="https://leonld94.github.io/University_File/JL_N_Universities.json";        //
-        var cc_bListURL="https://leonld94.github.io/University_File/CC_B_Universities.json";        //
-        var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        //
+        var cc_bListURL="https://leonld94.github.io/University_File/CC_B_Universities.json";        
+        var cc_nListURL="https://leonld94.github.io/University_File/CC_N_Universities.json";        
 
         var arrows = document.getElementsByClassName('sortArrow');
         var statusArrows = [0, 0, 0];
-        var clickedIndex = null;
+
 
         function exFill(json){
             var i,end;
@@ -419,23 +425,21 @@
             }
         }
 
-
-        // exRequest=new XMLHttpRequest();
-        // exRequest.open('Get',exListURL);
-        // exRequest.responseType='json';
-        // exRequest.send();
-        // exRequest.onload = function (){
-        //     exFill(exRequest.response);
-        // }
+        function fillCheck(){
+            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
+                fillTable();
+            }
+        }
 
 
-        /// 파일 완성되면 하나씩 될 것
         seoulRequest=new XMLHttpRequest();
         seoulRequest.open('Get',seoulListURL);
         seoulRequest.responseType='json';
         seoulRequest.send();
         seoulRequest.onload = function (){
             seoulFill(seoulRequest.response);
+            seoulOK = true;
+            fillCheck();
         }
         metroRequest=new XMLHttpRequest();
         metroRequest.open('Get',metroListURL);
@@ -443,6 +447,8 @@
         metroRequest.send();
         metroRequest.onload = function (){
             metroFill(metroRequest.response);
+            metroOK = true;
+            fillCheck();
         }
         ggRequest=new XMLHttpRequest();
         ggRequest.open('Get',ggListURL);
@@ -450,6 +456,8 @@
         ggRequest.send();
         ggRequest.onload = function (){
             ggFill(ggRequest.response);
+            ggOK = true;
+            fillCheck();
         }
         gwRequest=new XMLHttpRequest();
         gwRequest.open('Get',gwListURL);
@@ -457,51 +465,62 @@
         gwRequest.send();
         gwRequest.onload = function (){
             gwFill(gwRequest.response);
-            fillTable();    // 맨 마지막 수신에서 호출해야함
+            gwOK = true;
+            fillCheck();
         }
-
-        // gs_bRequest=new XMLHttpRequest();
-        // gs_bRequest.open('Get',gs_bListURL);
-        // gs_bRequest.responseType='json';
-        // gs_bRequest.send();
-        // gs_bRequest.onload = function (){
-        //     gs_bFill(gs_bRequest.response);
-        // }
-        // gs_nRequest=new XMLHttpRequest();
-        // gs_nRequest.open('Get',gs_nListURL);
-        // gs_nRequest.responseType='json';
-        // gs_nRequest.send();
-        // gs_nRequest.onload = function (){
-        //     gs_nFill(gs_nRequest.response);
-        // }
-        // jl_bRequest=new XMLHttpRequest();
-        // jl_bRequest.open('Get',jl_bListURL);
-        // jl_bRequest.responseType='json';
-        // jl_bRequest.send();
-        // jl_bRequest.onload = function (){
-        //     jl_bFill(jl_bRequest.response);
-        // }
-        // jl_nRequest=new XMLHttpRequest();
-        // jl_nRequest.open('Get',jl_nListURL);
-        // jl_nRequest.responseType='json';
-        // jl_nRequest.send();
-        // jl_nRequest.onload = function (){
-        //     jl_nFill(jl_nRequest.response);
-        // }
-        // cc_bRequest=new XMLHttpRequest();
-        // cc_bRequest.open('Get',cc_bListURL);
-        // cc_bRequest.responseType='json';
-        // cc_bRequest.send();
-        // cc_bRequest.onload = function (){
-        //     cc_bFill(cc_bRequest.response);
-        // }
-        // cc_nRequest=new XMLHttpRequest();
-        // cc_nRequest.open('Get',cc_nListURL);
-        // cc_nRequest.responseType='json';
-        // cc_nRequest.send();
-        // cc_nRequest.onload = function (){
-        //     cc_nFill(cc_nRequest.response);
-        // }
+        gs_bRequest=new XMLHttpRequest();
+        gs_bRequest.open('Get',gs_bListURL);
+        gs_bRequest.responseType='json';
+        gs_bRequest.send();
+        gs_bRequest.onload = function (){
+            gs_bFill(gs_bRequest.response);
+            gs_bOK = true;
+            fillCheck();
+        }
+        gs_nRequest=new XMLHttpRequest();
+        gs_nRequest.open('Get',gs_nListURL);
+        gs_nRequest.responseType='json';
+        gs_nRequest.send();
+        gs_nRequest.onload = function (){
+            gs_nFill(gs_nRequest.response);
+            gs_nOK = true;
+        }
+        jl_bRequest=new XMLHttpRequest();
+        jl_bRequest.open('Get',jl_bListURL);
+        jl_bRequest.responseType='json';
+        jl_bRequest.send();
+        jl_bRequest.onload = function (){
+            jl_bFill(jl_bRequest.response);
+            jl_bOK = true;
+            fillCheck();
+        }
+        jl_nRequest=new XMLHttpRequest();
+        jl_nRequest.open('Get',jl_nListURL);
+        jl_nRequest.responseType='json';
+        jl_nRequest.send();
+        jl_nRequest.onload = function (){
+            jl_nFill(jl_nRequest.response);
+            jl_nOK = true;
+            fillCheck();
+        }
+        cc_bRequest=new XMLHttpRequest();
+        cc_bRequest.open('Get',cc_bListURL);
+        cc_bRequest.responseType='json';
+        cc_bRequest.send();
+        cc_bRequest.onload = function (){
+            cc_bFill(cc_bRequest.response);
+            cc_bOK = true;
+            fillCheck();
+        }
+        cc_nRequest=new XMLHttpRequest();
+        cc_nRequest.open('Get',cc_nListURL);
+        cc_nRequest.responseType='json';
+        cc_nRequest.send();
+        cc_nRequest.onload = function (){
+            cc_nFill(cc_nRequest.response);
+            cc_nOK = true;
+            fillCheck();
+        }
 
         function clearHeap(){   // Heap 좀 지워줘요. 이거 하고나면 다 empty 되니까 비교할때 에러 안나서 좋음
             Heap=new Array(140);
@@ -522,12 +541,6 @@
                 ]
             }
         }
-        //화살표 돌리는 함수
-        function rotateArrow(th){
-            statusArrows[i] = (statusArrows[i] + 2) % 3;
-            console.log(statusArrows[i]);
-            arrows[i].cssText = `display: flex; transition: 1s; transform: rotate(${statusArrows[i] * 90})deg;`;    
-        }
 
         function sortName(){          // name의 경우만 특별하게 앞뒤를 뒤집어줘야함
             if(nameSort == true)    // 뒤집으면 됨
@@ -541,16 +554,7 @@
 
                 }
                 //여기에서 화살표 돌리기
-                for(var i = 0; i < arrows.length; i++){
-                    if(arrows[i].parentElement.id == 'Name'){
-                        statusArrows[i] = (statusArrows[i] + 2) % 3;
-                        console.log(statusArrows[i]);
-                        arrows[i].cssText = `display: flex; transition: 1s; transform: rotate(${statusArrows[i] * 90})deg;`;
-                        continue;
-                    }
-                    statusArrows[i] = 0;
-                }
-
+                var arrows = document.getElementsByClassName('')
                 var iter,end;
                 end=parseInt((allCounter-1)/2);
                 for(iter=1;iter<=end;iter++){
@@ -851,7 +855,7 @@
                 <thead>
                     <tr>
                         <th id="Location">소재</th>
-                        <th id="Name" onmousedown="sortName()" class="tableHead">대학교 이름 <img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
+                        <th id="Name" onmousedown="sortName()" class="tableHead">대학교 이름 <img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow" onclick=""></th>
                         <th id="Students" onmousedown="sortStud()" class="tableHead">재학생 수<img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
                         <th id="Tag" onmousedown="sortTags()" class="tableHead">태그<img src="triangleDesign/triangle.png" alt="화살표" class="sortArrow"></th>
                         <th id="SuLink">수시 링크</th>
@@ -864,13 +868,13 @@
         </div>
     </section>
     <footer>
-        <br>
-        - 대표자명 : 이윤호<br>
-        - 주소 : undefined<br>
-        - 전화번호 : 010-4677-3492<br>
-        - 이메일 : qwerty1076199@gmail.com<br>
-        태그 중 [TOP 20]는 'https://www.languagecourse.net/ko/daehag--south-korea'를 기준으로 선정하였습니다.<br>
-        재학생 수는 동일 시기가 아닐 수 있습니다.
-    </footer>
+            <br>
+            - 대표자명 : 이윤호<br>
+            - 주소 : undefined<br>
+            - 전화번호 : 010-4677-3492<br>
+            - 이메일 : qwerty1076199@gmail.com<br>
+            태그 중 [TOP 20]는 'https://www.languagecourse.net/ko/daehag--south-korea'를 기준으로 선정하였습니다.<br>
+            재학생 수는 동일 시기가 아닐 수 있습니다.
+        </footer>
 </body>
 </html>
