@@ -203,19 +203,9 @@
         }
     </style>
     <script>
-        var seoulCollege = new Array(32);   // 서울
-        var metroCollege = new Array(23);   // 광역시
-        var ggCollege = new Array(15);      // 경기도
-        var gwCollege = new Array(4);      // 강원도
-        var gs_bCollege = new Array(6);    // 경상북도
-        var gs_nCollege = new Array(7);    // 경상남도
-        var jl_bCollege = new Array(5);    // 전라북도
-        var jl_nCollege = new Array(3);    // 전라남도
-        var cc_bCollege = new Array(5);    // 충청북도
-        var cc_nCollege = new Array(10);    // 충청남도
-        var allCollege = new Array(140);    // 전체 대학 총괄
-        var Heap = new Array(140);          // 정렬용 배열
-        var search_College = new Array(140);// 검색용 배열
+        var allCollege = new Array(110);    // 전체 대학 총괄
+        var Heap = new Array(110);          // 정렬용 배열
+        var search_College = new Array(110);// 검색용 배열
 
         var nameSort = false;
         var studSort = false;
@@ -264,13 +254,11 @@
 
         var arrows = document.getElementsByClassName('sortArrow');
         var statusArrows = [-1, -1, -1];
-        var clickedIndex = null;
 
         function seoulFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                seoulCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -279,21 +267,14 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                metroCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
-            }
-        }
-        function fillCheck(){
-            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK){
-                fillTable();
             }
         }
         function ggFill(json){
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                ggCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -302,7 +283,6 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                gwCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -311,7 +291,6 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                gs_bCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -320,7 +299,6 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                gs_nCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -329,7 +307,6 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                jl_bCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -338,7 +315,6 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                jl_nCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -347,7 +323,6 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                cc_bCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -356,7 +331,6 @@
             var i, end;
             end=json.universities.length;
             for(i=1;i<=end;i++,allCounter++){
-                cc_nCollege[i]=json.universities[i-1];
                 allCollege[allCounter]=json.universities[i-1];
                 Heap[allCounter]=json.universities[i-1];
             }
@@ -423,7 +397,11 @@
                 tbody.appendChild(newchild);
             }
         }
-
+        
+        function fillCheck(){
+            if(seoulOK && metroOK && ggOK && gwOK && gs_bOK && gs_nOK && jl_bOK && jl_nOK && cc_bOK && cc_nOK)
+                fillTable();
+        }
 
         seoulRequest=new XMLHttpRequest();
         seoulRequest.open('Get',seoulListURL);
@@ -550,7 +528,6 @@
                 {
                     if(statusArrows[i] == -1)
                         statusArrows[i] = 0;
-                    console.log(statusArrows[i]);
                     statusArrows[i] = (statusArrows[i] + 1) % 2;
                     switch(statusArrows[i]){
                         case 0:
@@ -581,18 +558,15 @@
             initArrow();
 
             var searchBar = document.getElementById('search');
-            for(var i = 1; i < allCounter; i++){
-                if(allCollege[i].college_name.indexOf(searchBar.value) != -1){
+            for(var i = 1; i < allCounter; i++)
+                if(allCollege[i].college_name.indexOf(searchBar.value) != -1)
                     search_College[searchIndex++] = allCollege[i];
-                }
-            }
 
             var tbody=document.getElementsByTagName("tbody")[0];
             var iter,end;
             end = tbody.childElementCount;
-            for(iter=1;iter<=end;iter++){
+            for(iter=1;iter<=end;iter++)
                 tbody.removeChild(tbody.firstElementChild);
-            }
 
             end=searchIndex;
     
@@ -937,7 +911,7 @@
                     
                 fillTable();
                 }
-        }
+            }
         </script>
 </head>
 <body>
