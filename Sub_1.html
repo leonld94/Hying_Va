@@ -8,6 +8,7 @@
         body{
             margin: 0px;
             font-family: 'Nanum Gothic', sans-serif;
+            overflow-y: auto;
         }
         header{
             display: flex;
@@ -130,7 +131,6 @@
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
-            overflow-y: auto;
         }
         #selLocal{
             border: 1px solid navy;
@@ -231,9 +231,10 @@
             font-size: 12px;
             background-color: #555555;
             color: #FFFFFF;
-            display: block;
             position: relative;
             margin: 0px;
+            bottom: 0px;
+            width: 100%;
             text-align: center;
             margin-top: 20px;
             height: 113px;
@@ -242,8 +243,10 @@
     <script>
         let count = [0,0];
         let i;
+
         const hidDiv = th => {
             const div = document.getElementsByName('localDiv')
+            const footer = document.getElementsByTagName('footer')[0];
             i = (th.id == 'selArrow') ? 0 : 1;
             count[i]++
             th.style.cssText = `display: flex; transition: 0.5s; transform: rotate(${count[i] * 180}deg);`
