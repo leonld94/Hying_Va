@@ -853,8 +853,8 @@
     <section>
         <div class="intro">
             <div class="input">
-                <form>
-                    <input type="search" id="search" placeholder="어느 대학교?" required>
+                <form onsubmit="return false">
+                    <input type="text" id="search" placeholder="어느 대학교?" required onKeypress="javascript:if(event.keyCode==13) {searchUniv()}">
                     <input type="button" id="submit" onclick="searchUniv()" value="검색">
                 </form>
             </div>
