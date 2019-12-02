@@ -239,7 +239,6 @@
 
         const adjustDiv = th => {
             const div = document.getElementsByName('localDiv')[1]
-            console.log(div.offsetHeight)
             div.style.cssText = 'display: flex; transition: 0s;'
             div.style.marginTop = `${(-count[i] % 2) * div.offsetHeight}px`
         }
